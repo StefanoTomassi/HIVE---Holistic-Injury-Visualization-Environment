@@ -4,10 +4,12 @@ import pandas as pd
 from dynasaur.plugins.data_visualization_controller import DataVisualizationController
 from dynasaur.plugins.criteria_controller import CriteriaController
 import csv
+
+#Import of custom functions
 from history_node_id import write_node_id as hnid
 from keyword_reader import read_keywords as rk
 from dataviz_criteria_creation import create_dataviz_criteria as cdc
-
+import directories_files
 def main():
 
     cwd = os.path.normpath(os.getcwd() + os.sep + os.pardir)
@@ -23,7 +25,7 @@ def main():
                                                       object_def_file=path_to_def_id,
                                                       data_source=path_to_data)
 
-    file_dir = r'C:\Users\d069056\OneDrive - Politecnico di Torino\File di Alessandro  Scattina - S361385_TOMASSI_Stefano\Modelli\Ettore_whiplash\2023_02_23_HN_sim_03\extensionWhiplashSimulation-main\umat41\0deg\run.key'
+    file_dir = directories_files.binout_dir
     cards = rk(file_dir)
     for card in cards:
         if 'DATABASE_HISTORY_NODE_ID' in card:
@@ -39,7 +41,7 @@ def main():
 
     data_vis_controller.write_CSV(output_dir, filename="node_xvel.csv")
 
-    dataFrame = pd.read_csv(os.path.join(output_dir, "node_xvel.csv"), delimiter=';')
+
         #crit_controller = CriteriaController(calculation_procedure_def_file=path_to_def, object_def_file=path_to_def_id,
                                     #     data_source=path_to_data)
 
