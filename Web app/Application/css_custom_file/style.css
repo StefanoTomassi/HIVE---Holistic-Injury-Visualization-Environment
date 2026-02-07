@@ -1,0 +1,86 @@
+/* Generic Colorblind-Friendly CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0173b2;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0173b2;
+    text-decoration: none;
+    border-bottom: 2px solid #0173b2;
+}
+
+a:hover {
+    background-color: #e8f4f8;
+}
+
+button {
+    background-color: #0173b2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #029e73;
+}
+
+footer {
+    background-color: #404040;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.alert-success {
+    background-color: #029e73;
+    color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #000000;
+}
+
+.alert-warning {
+    background-color: #d55e00;
+    color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #000000;
+}
+
+.alert-error {
+    background-color: #cc78bc;
+    color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #000000;
+}
