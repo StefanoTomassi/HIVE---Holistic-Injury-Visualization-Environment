@@ -13,9 +13,9 @@ import directories_files
 def main():
 
     cwd = os.path.normpath(os.getcwd() + os.sep + os.pardir)
-    input_dir_auxiliaries = os.path.join(cwd, "Data/results_and_file_definition")
-    input_dir_sim = os.path.join(cwd, "Data/results_and_file_definition")
-    output_dir = os.path.join(cwd, "Data/results")
+    input_dir_auxiliaries = os.path.join(cwd, r"Data_generation\results_and_file_definition")
+    input_dir_sim = os.path.join(cwd, r"Data_generation\results_and_file_definition")
+    output_dir = os.path.join(cwd, r"Data_generation\results")
 
     path_to_def = os.path.join(input_dir_auxiliaries, "dataviz_criteria_2.def")
     path_to_def_id = os.path.join(input_dir_auxiliaries, "history_node_id_2.def")
@@ -26,6 +26,7 @@ def main():
                                                       data_source=path_to_data)
 
     file_dir = directories_files.binout_dir
+    print(f"Reading file: {file_dir}")
     cards = rk(file_dir)
     for card in cards:
         if 'DATABASE_HISTORY_NODE_ID' in card:
