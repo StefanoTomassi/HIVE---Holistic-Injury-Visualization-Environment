@@ -25,7 +25,7 @@ def main():
                                                       object_def_file=path_to_def_id,
                                                       data_source=path_to_data)
 
-    file_dir = directories_files.binout_dir
+    file_dir = directories_files.keyword_dir
     print(f"Reading file: {file_dir}")
     cards = rk(file_dir)
     for card in cards:
