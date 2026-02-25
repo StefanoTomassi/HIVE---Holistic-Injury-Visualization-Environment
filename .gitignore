@@ -20,3 +20,4 @@ wheels/
 .installed.cfg
 *.egg
 Data_generation/__pycache__/keyword_reader.cpython-38.pyc
+test_*
