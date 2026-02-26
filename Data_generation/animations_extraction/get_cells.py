@@ -1,4 +1,7 @@
-def get_cells(dr, p, points_with_id):
+
+
+
+def get_cells(dr, p, points_with_id, shells):
     """
     Extracts the cell connectivity information for shell elements at a specific time step and integration point from a D3plotReader object.
 
@@ -25,22 +28,8 @@ def get_cells(dr, p, points_with_id):
     sys.path.append(str(upper_dir))
     from directories_files import nodes_dir
     from keyword_reader import read_keywords as kr
-
-    #Read the keyword file and extract the shell connectivity
-    keywords = kr(nodes_dir)
-    shells = np.array([0, 0, 0, 0], dtype=np.int64)
-    for key in keywords.keys():
-        if '*ELEMENT_SHELL' in key:
-            for line in keywords[key]:
-                line = line.strip().split(' ')
-                id_el = int(line[0])
-                nodes = [int(node) for node in line[2:6]]
-                shells = np.vstack([shells, nodes])
-
-
-    shells = shells[1:]  # Remove the initial placeholder row
-    n_shells = shells.shape[0]  # Assuming 4 nodes/shell
-
+    from get_elements_from_keyword import get_elements_from_keyword as shells_from_keyword
+    n_shells = shells.shape[0]
     # Map LS-DYNA node IDs to VTK point indices
     unique_ls_ids = np.array(list(points_with_id.keys()))
     vtk_indices = np.arange(len(unique_ls_ids), dtype=np.int64)
@@ -86,9 +75,6 @@ def get_cells(dr, p, points_with_id):
         elif cell[0] == 4:  # Quad
             cells_vtk.extend(cell[:5])   # 4 nodes
     cells_vtk = np.array(cells_vtk)
-    test_text.write("Cells VTK: \n")
-    for i in range(1000):        test_text.write(str(cells_vtk[i]) + "\n")
-    print("Cells VTK shape:", cells_vtk.shape)
     #Define cell types: 9 for QUAD, 5 for TRI
     cell_types = np.empty((n_shells, 5), dtype=np.uint8)
     cell_types[:, 0] = 4  # Initialize all rows with 4 (QUAD)
@@ -97,8 +83,6 @@ def get_cells(dr, p, points_with_id):
     cell_types[unique_counts == 3, 1:] = pv.CellType.TRIANGLE  # Fill tri rows with TRIANGLE type (5)
     cell_types_single = np.array([cell[1] for cell in cell_types])
     test_text.write( "cell_types: \n")
-    for i in range(1000):
-        test_text.write(str(cell_types_single[i]) + "\n")
 
     test_text.close()
     return cells_vtk, cell_types_single
