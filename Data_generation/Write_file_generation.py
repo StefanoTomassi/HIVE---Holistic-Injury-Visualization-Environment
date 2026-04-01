@@ -17,14 +17,6 @@ def main():
     input_dir_sim = os.path.join(cwd, r"Data_generation\results_and_file_definition")
     output_dir = os.path.join(cwd, r"Data_generation\results")
 
-    path_to_def = os.path.join(input_dir_auxiliaries, "dataviz_criteria_2.def")
-    path_to_def_id = os.path.join(input_dir_auxiliaries, "history_node_id_2.def")
-    path_to_data = os.path.join(input_dir_sim, "binout*")
-
-    data_vis_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
-                                                      object_def_file=path_to_def_id,
-                                                      data_source=path_to_data)
-
     file_dir = directories_files.keyword_dir
     print(f"Reading file: {file_dir}")
     cards = rk(file_dir)
@@ -32,15 +24,23 @@ def main():
         if 'DATABASE_HISTORY_NODE_ID' in card:
             print(f'Keyword: {card}')
             node_dict = hnid(cards[card])
-            cdc(node_dict)
+            cdc(node_dict, x_crit="x_coordinate", y_crit="z_coordinate")
 
-    commands = [{'visualization': node+'_xvel', 'x_label': 'time[ms]', 'y_label': 'x_vel'} for node in node_dict]    
+    path_to_def = os.path.join(input_dir_auxiliaries, "dataviz_x_coordinate_z_coordinate.def")
+    path_to_def_id = os.path.join(input_dir_auxiliaries, "history_node_id_2.def")
+    path_to_data = directories_files.binout_dir[0]
+
+    data_vis_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
+                                                      object_def_file=path_to_def_id,
+                                                      data_source=path_to_data)
+   
+    commands = [{'visualization': node+'_lateral', 'x_label': 'x_coordinate', 'y_label': 'z_coordinate'} for node in node_dict]    
 
     print(node_dict)
     for command in commands:
         data_vis_controller.calculate(command)
 
-    data_vis_controller.write_CSV(output_dir, filename="node_xvel.csv")
+    data_vis_controller.write_CSV(output_dir, filename="node_xcoordinate_zcoordinate.csv")
 
 
         #crit_controller = CriteriaController(calculation_procedure_def_file=path_to_def, object_def_file=path_to_def_id,

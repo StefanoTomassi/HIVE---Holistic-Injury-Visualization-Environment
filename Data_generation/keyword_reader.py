@@ -23,3 +23,28 @@ def read_keywords(dir_file: str) -> dict:
             cards[current_keyword].append(line)
     file.close()
     return cards
+
+def get_dyna_parts(cards_dict) -> dict:
+    """
+    Extracts the part information from the LS-DYNA keyword cards.
+
+    Parameters:
+    cards_dict (dict): A dictionary containing the LS-DYNA keyword cards.
+
+    Returns:
+    dict: A dictionary mapping part IDs to part names.
+    """
+    parts = {}
+    for card in cards_dict:
+        if 'PART' in card:
+            part_id = int(cards_dict[card][1].split()[0].strip())
+            part_name = cards_dict[card][0].strip()
+            parts[part_name] = part_id
+    return parts
+
+def get_selected_part(desired_parts: str, part_dict: dict) -> list:
+    part_to_analyze = []
+    for key, value in part_dict.items():
+        if desired_parts in key:
+            part_to_analyze.append(key)
+    return part_to_analyze

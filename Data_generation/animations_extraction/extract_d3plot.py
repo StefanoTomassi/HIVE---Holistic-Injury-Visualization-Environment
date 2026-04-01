@@ -25,7 +25,7 @@ dr = lr.D3plotReader(d3plot_dir_list[0])
 p = lr.D3P_Parameter()
 p.ist = 0  # Timestep
 p.ipt = 1  # Integration point (0=top, 1=middle, 2=bottom)
-p.ipart_user = 2004110  # Part ID (0 for all parts, or specify a part ID)
+p.ipart_user = 0  # Part ID (0 for all parts, or specify a part ID)
 num_states = dr.get_data(lr.DataType.D3P_NUM_STATES)
 shells, parts = shells_from_keyword(nodes_dir, part_dir)
 selected_part = 'N_L_AOCJ-CL'
@@ -49,12 +49,10 @@ pl.open_movie('animation_3.mp4', framerate=10)
 #Initial frame setup
 
 
-cells, cell_types = get_cells(dr, p, nodes_with_id, shells_in_part)
-strain = get_strain(dr,p,shells_in_part)
+cells, cell_types = get_cells(dr, p, nodes_with_id, shells)
 mesh = pv.UnstructuredGrid(cells, cell_types, nodes)
-print("Cells shape:", cells.shape, "Cell types shape:", cell_types.shape, "Nodes shape:", nodes.shape, "Strain shape:", strain.shape)
-mesh.cell_data['plastic_strain'] = strain
-actor = pl.add_mesh(mesh, scalars = 'plastic_strain', color='green', render_points_as_spheres=False, show_edges=True,  show_scalar_bar=True)
+print("Strain shape:", strain.shape)
+actor = pl.add_mesh(mesh, color='green', render_points_as_spheres=False, show_edges=True,  show_scalar_bar=True)
 pl.add_text(f'Time: {times[0]:.4f}s', position='upper_left', font_size=12, color='white')
 pl.write_frame()  # Write the first frame
 
@@ -64,11 +62,10 @@ for i in range(1, num_states):
     p.ist = i  # Timestep
     points, points_with_id = get_points(dr, p)
     shells_in_part, nodes, nodes_with_id = get_component(points_with_id, shells, parts, selected_part)
-    cells, cell_types = get_cells(dr, p, nodes_with_id, shells_in_part)
+    cells, cell_types = get_cells(dr, p, nodes_with_id, shells)
     new_mesh = pv.UnstructuredGrid(cells, cell_types, nodes)
-    new_mesh.cell_data['plastic_strain'] = get_strain(dr,p,shells_in_part)
     pl.remove_actor(actor)
-    actor = pl.add_mesh(new_mesh, scalars = 'plastic_strain', color='green', render_points_as_spheres=False, show_edges=True,  show_scalar_bar=True)
+    actor = pl.add_mesh(new_mesh, color='green', render_points_as_spheres=False, show_edges=True,  show_scalar_bar=True)
     pl.add_text(f'Time: {times[i]:.4f}s', position='upper_left', font_size=12, color='white')
     pl.reset_camera()
     pl.write_frame()  # Write each frame in the loop
