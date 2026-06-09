@@ -1,0 +1,65 @@
+DEFFOrc : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
+RBDout : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
+BDNout : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
+Disbout : ['r_dis_axial', 'moment_s', 'rslt_nt', 'r_dis_nt', 't_dir_y', 'axial_rot',
+                          's_dir_y', 'r_dis_ns', 'matid', 's_dir_x', 'torsion', 'rslt_ns', 'axial_z', 'mtype',
+                          't_dir_x', 'rot_s', 'axial_y', 's_dir_z', 'rot_t', 'rslt_axial', 'moment_t', 'axial_x',
+                          't_dir_z']
+PartDisbout : ['r_dis_axial', 'moment_s', 'rslt_nt', 'r_dis_nt', 't_dir_y', 'axial_rot',
+                          's_dir_y', 'r_dis_ns', 'matid', 's_dir_x', 'torsion', 'rslt_ns', 'axial_z', 'mtype',
+                          't_dir_x', 'rot_s', 'axial_y', 's_dir_z', 'rot_t', 'rslt_axial', 'moment_t', 'axial_x',
+                          't_dir_z']
+Elout : ['axial', 'shear_s', 'shear_t', 'moment_s', 'moment_t', 'torsion'] #just for beam element!!
+Abstat: ['dm_dt_out', 'pressure', 'internal_energy', 'density', 'surface_area', 'dm_dt_in', 'dm_dt_outp',
+                          'reaction', 'volume', 'gas_temp', 'total_mass', 'dm_dt_outv']
+AbstatCPM: ['dm_dt_out', 'pressure', 'internal_energy', 'density', 'surface_area', 'dm_dt_in',
+                          'inflator_e', 'reaction', 'volume', 'gas_temp', 'total_mass', 'pres_particle', 'Trans_ke'] #just for beam element!!
+Glstat: ['global_y_velocity', 'internal_energy', 'kinetic_energy', 'percent_increase', 'ts_element',
+                          'energy_ratio_wo_eroded', 'spring_and_damper_energy', 'eroded_kinetic_energy',
+                          'num_bad_shells', 'energy_ratio', 'external_work', 'time_step', 'global_z_velocity',
+                          'global_x_velocity', 'eroded_internal_energy', 'time', 'total_energy',
+                          'system_damping_energy', 'hourglass_energy', 'sliding_interface_energy', 'cycle', 'ts_eltype',
+                          'joint_internal_energy', 'eroded_hourglass_energy', 'nzc', 'added_mass',
+                          'resultant_global_velocity', 'ts_part']
+Matsum : ['x_momentum', 'y_rbvelocity', 'z_rbvelocity', 'internal_energy', 'kinetic_energy',
+                          'max_shell_mass', 'y_momentum', 'mass', 'eroded_kinetic_energy', 'brick_id', 'max_brick_mass',
+                          'shell_id', 'eroded_internal_energy', 'z_momentum', 'hourglass_energy',
+                          'eroded_hourglass_energy', 'x_rbvelocity', 'energy_ratio', 'eroded_energy_ratio',
+                          'x_rbacceleration', 'y_acceleration', 'z_acceleration', 'x_rbdisplacement',
+                          'y_rbdisplacement', 'z_rbdisplacement', 'resultant_displacement', 'resultant_velocity',
+                          'resultant_acceleration', 'resultant_momentum', 'x_acceleration', 'y_acceleration',
+                          'z_acceleration']
+RigidBody : ['local_ax', 'local_ay', 'local_az', 'local_dx', 'local_dy', 'local_dz', 'local_vx',
+                          'local_vy', 'local_vz', 'local_rax', 'local_ray', 'local_raz', 'local_rdx', 'local_rdy',
+                          'local_rdz', 'local_rvx', 'local_rvy', 'local_rvz', 'global_x', 'global_y', 'global_z',
+                          'global_dx', 'global_dy', 'global_dz', 'global_ax', 'global_ay', 'global_az', 'global_vx',
+                          'global_vy', 'global_vz', 'global_rax', 'global_ray', 'global_raz', 'global_rdx',
+                          'global_rdy', 'global_rdz', 'global_rvx', 'global_rvy', 'global_rvz', 'dircos_11',
+                          'dircos_12', 'dircos_13', 'dircos_21', 'dircos_22', 'dircos_23', 'dircos_31', 'dircos_32',
+                          'dircos_33']
+BoundaryCondition : ['energy', 'y_force', 'x_force', 'xmoment', 'ymoment', 'zmoment',
+                          'z_force', 'etotal', 'x_total', 'y_total', 'z_total']
+Nodout : ['rx_velocity', 'ry_velocity', 'rz_velocity', 'rx_displacement', 'ry_displacement',
+                          'rz_displacement', 'rx_acceleration', 'ry_acceleration', 'rz_acceleration', 'x_coordinate',
+                          'y_coordinate', 'z_coordinate', 'x_displacement', 'y_displacement', 'z_displacement',
+                          'x_velocity', 'y_velocity', 'z_velocity', 'x_acceleration', 'y_acceleration',
+                          'z_acceleration', 'resultant_rotation', 'resultant_angular_velocity',
+                          'resultant_angular_acceleration', 'resultant_displacement', 'resultant_velocity',
+                          'resultant_acceleration']
+JointForc : ['energy', 'resultant_moment', 'resultant_force', 'x_force',  'y_force', 'z_force',
+                          'x_moment', 'y_moment', 'z_moment']
+JointType : ['alpha_moment_stiffness', 'd(gamma)_dt', 'joint_extra2',
+                          'alpha_degrees', 'alpha_moment_total', 'gamma_degrees', 'd(alpha)_dt', 'beta_degrees',
+                          'alpha_moment_damping', 'beta_moment_total', 'gamma_scale_factor',
+                          'beta_moment_damping', 'd(beta)_dt', 'beta_moment_stiffness']
+RCForc : ['x_moment', 'y_moment', 'z_moment', 'x_force', 'y_force', 'z_force', 'tie_count', 'mass',
+                          'tie_area', 'resultant_force']
+SBTout : ['belt_length', 'belt_force']
+SlipringOut : ['ring_slip']
+RetractorOut : ['retractor_pull_out', 'retractor_force']
+Secforc : ['x_force', 'y_force', 'z_force', 'x_moment', 'y_moment', 'z_moment',
+                          'x_centroid', 'y_centroid', 'z_centroid', 'total_force', 'total_moment', 'area']
+Sleout : ['total_friction', 'slave', 'total_master', 'master', 'cycle',
+                          'friction_energy', 'time', 'total_energy',
+                          'total_slave']
+
