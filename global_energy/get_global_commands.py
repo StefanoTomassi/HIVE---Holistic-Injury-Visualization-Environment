@@ -1,7 +1,7 @@
 from core.dataclasses import simulation_dataclasses
 from core.io.create_criteria import create_data_visualization
 
-def get_commands():
+def get_global_commands():
 
     EnergyRatio = simulation_dataclasses.DataVisualizationDefinition(name="Energy Ratio", 
                                                         part_of="Global Energy",
@@ -88,6 +88,7 @@ def get_commands():
                                                         ID="Model",
                                                         y="eroded_internal_energy",
                                                         x="time")
+    
     global_energies = [EnergyRatio, TotalEnergy, InternalEnergy, KineticEnergy, SpringAndDampingEnergy, ExternalWork, SystemDampingEnergy, HourglassEnergy, SlidingInterfaceEnergy, JointInternalEnergy, AddedMass, ErodedHourglassEnergy, ErodedKineticEnergy, ErodedInternalEnergy]
     
     energy_data_visualization = []

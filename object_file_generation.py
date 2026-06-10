@@ -15,7 +15,8 @@ from core.io.select_folder import choose_folder, choose_file
 import core.io.directories_files as directories_files
 import sys
 from pathlib import Path
-from global_energy.get_commands import get_commands as get_energy_commands
+from global_energy.get_global_commands import get_global_commands as get_global_energy_commands
+from global_energy.get_global_energies import plot_all_timeseries
 def main():
 
     simulation_files_dir = choose_folder("Select folder with simulation files and auxiliary files (def files)")
@@ -27,7 +28,7 @@ def main():
     path_to_data = os.path.join(simulation_files_dir, "binout*")
     #all_data_visualization = []
     #for card in cards:
-        #if 'DATABASE_HISTORY_NODE_ID' in card:
+        #if 'PART' in card:
             #node_dict = kr.get_dyna_history_id(cards[card])
             #node_objects = co.create_objects(type_obj="NODE", data=node_dict)
             #all_objects.extend(node_objects)
@@ -70,7 +71,7 @@ def main():
     #cc.close_criteria_file(criteria) #json.dump(all_criteria, criteria, indent=2)
     print(all_objects)    
     
-    global_energy, energy_definitions = get_energy_commands()
+    global_energy, energy_definitions = get_global_energy_commands()
     cc.write_criteria_file(dir=path_to_def, data_visualization=energy_definitions, criteria=[])   
     data_vis_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
                                                       object_def_file=path_to_def_id,
@@ -82,7 +83,8 @@ def main():
 
     data_vis_controller.write_CSV(output_dir, filename="global_energies.csv")
 
-
+    fig, summary_df, percentage_table = plot_all_timeseries(csv_path=os.path.join(output_dir, "global_energies.csv"))
+    percentage_table.to_csv(os.path.join(output_dir, "percentage_table.csv"), index=False)
         #crit_controller = CriteriaController(calculation_procedure_def_file=path_to_def, object_def_file=path_to_def_id,
                                     #     data_source=path_to_data)
 

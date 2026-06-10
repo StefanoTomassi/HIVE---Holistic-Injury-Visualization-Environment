@@ -54,7 +54,7 @@ def get_dyna_parts(cards_dict: dict) -> dict:
     """
     parts = {}
     for card in cards_dict:
-        if 'PART' in card:
+        if '*PART' in card:
             part_id = int(cards_dict[card][1].split()[0].strip())
             part_name = cards_dict[card][0].strip()
             parts[part_name] = part_id
