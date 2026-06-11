@@ -18,6 +18,7 @@ from pathlib import Path
 from global_energy.get_global_commands import get_global_commands as get_global_energy_commands
 from global_energy.get_global_energies import plot_global_energy_timeseries
 from global_energy.get_part_commands import get_part_commands
+from global_energy.get_part_energies import plot_part_energy_timeseries
 def main():
 
     simulation_files_dir = choose_folder("Select folder with simulation files and auxiliary files (def files)")
@@ -29,8 +30,9 @@ def main():
     path_to_data = os.path.join(simulation_files_dir, "binout*")
     all_objects = []
     all_data_visualization = []
-    energy_objects = co.create_objects(type_obj="ENERGY_GLOBAL", data={"Model": "0"})
-    all_objects.extend(energy_objects)
+    global_energy_objects = co.create_objects(type_obj="ENERGY_GLOBAL", data={"Model": "0"})
+    other_energy_objects = co.create_objects(type_obj="ENERGY_OTHER", data={"Model": "0"})
+    all_objects.extend(global_energy_objects)
         
     parts= kr.get_dyna_parts(cards)
     part_objects = co.create_objects(type_obj="ENERGY_PART", data=parts)
@@ -43,22 +45,28 @@ def main():
     all_data_visualization.extend(global_energy_definitions)
 
     cc.write_criteria_file(dir=path_to_def, data_visualization=all_data_visualization, criteria=[])   
-    data_vis_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
+    global_energy_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
+                                                      object_def_file=path_to_def_id,
+                                                      data_source=path_to_data)
+    part_energy_controller = DataVisualizationController(calculation_procedure_def_file=path_to_def,
                                                       object_def_file=path_to_def_id,
                                                       data_source=path_to_data)
     for energy in global_energy:
         print(energy)
         command = {'visualization': energy.part_of+'_'+energy.name, 'x_label': energy.x+' [ms]', 'y_label': energy.y+' [J]'}
-        data_vis_controller.calculate(command)
+        global_energy_controller.calculate(command)
     
     for part in parts_def:
         command = {'visualization': part.part_of+'_'+part.name, 'x_label': part.x+' [ms]', 'y_label': part.y+' [J]'}
-        data_vis_controller.calculate(command)
+        part_energy_controller.calculate(command)
     
-    data_vis_controller.write_CSV(output_dir, filename="global_energies.csv")
+    global_energy_controller.write_CSV(output_dir, filename="global_energies.csv")
+    part_energy_controller.write_CSV(output_dir, filename="part_energies.csv")
 
-    fig, summary_df, percentage_table = plot_global_energy_timeseries(csv_path=os.path.join(output_dir, "global_energies.csv"))
-    percentage_table.to_csv(os.path.join(output_dir, "percentage_table.csv"), index=False)
+    fig, summary_df, percentage_table_glob = plot_global_energy_timeseries(csv_path=os.path.join(output_dir, "global_energies.csv"))
+    fig, summary_df, percentage_table_part = plot_part_energy_timeseries(csv_path=os.path.join(output_dir, "part_energies.csv"))
+    percentage_table_glob.to_csv(os.path.join(output_dir, "percentage_table_global.csv"), index=False)
+    percentage_table_part.to_csv(os.path.join(output_dir, "percentage_table_part.csv"), index=False)
 
 if __name__ == "__main__":
     main()

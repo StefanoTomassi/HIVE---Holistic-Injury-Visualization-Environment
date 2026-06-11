@@ -1,6 +1,6 @@
 import dataclasses.simulation_dataclasses as DataClass
-import object_file_generation as wf
-#import process_whiplash_simulation as process_whiplash_simulation
+import object_file_generation_draft as wf
+
 def main():
 
     choice = str(input("Select simulation type (e.g., 'Whiplash'):"))
@@ -20,7 +20,7 @@ def main():
                         
              mesh_file=None, 
              part_file=None)
-        process_whiplash_simulation(simulation_data)
+        
     if choice == 'global':
         simulation_data = DataClass.SimulationData(name="Global",
              output_dir=None,
