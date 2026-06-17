@@ -113,7 +113,7 @@ def build_energy_percentage_table(df: pd.DataFrame, pairs):
     return pd.DataFrame(records), total_pair
 
 
-def plot_part_energy_timeseries(
+def plot_other_energy_timeseries(
     csv_path,
     relative_threshold: float = RELATIVE_THRESHOLD,
 ):
@@ -174,10 +174,11 @@ def plot_part_energy_timeseries(
     energy_unit = summary_df.loc[
             summary_df["variable"] == total_pair[3]["variable"], "unit"
         ].iloc[0]
+    time_label = f"{metadata[0]['variable']}"
     ax_energy.set_xlabel(time_label)
     ax_energy.set_ylabel(f"Energy [J]".strip())
     ax_energy.set_title(
-        "Part energies",
+        "Other energies",
     )
     ax_energy.grid(True, linestyle="--", alpha=0.4, linewidth=0.8)
     ax_energy.legend(loc="best", fontsize=0.9 * PlotSettings.font_size, frameon=False)
@@ -204,4 +205,4 @@ def plot_part_energy_timeseries(
     return fig, summary_df, percentage_table
 
 if __name__ == "__main__":
-    fig, summary_df, percentage_table = plot_part_energy_timeseries()
+    fig, summary_df, percentage_table = plot_other_energy_timeseries()

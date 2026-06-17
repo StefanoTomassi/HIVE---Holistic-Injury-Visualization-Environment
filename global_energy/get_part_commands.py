@@ -1,39 +1,38 @@
 from core.dataclasses import simulation_dataclasses
 from core.io.create_criteria import create_data_visualization
 
-def get_part_commands(parts):
-    for part in parts:
-        InternalEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Internal Energy",
+def get_part_commands(part):
+    InternalEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Internal Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
                                                             y="internal_energy",
                                                             x="time")
-        KineticEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Kinetic Energy",
+    KineticEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Kinetic Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
                                                             y="kinetic_energy",
                                                             x="time")
-        HourglassEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Hourglass Energy",
+    HourglassEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Hourglass Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
                                                             y="hourglass_energy",
                                                             x="time")
-        ErodedHourglassEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Hourglass Energy",
+    ErodedHourglassEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Hourglass Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
                                                             y="eroded_hourglass_energy",
                                                             x="time")
-        ErodedKineticEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Kinetic Energy",
+    ErodedKineticEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Kinetic Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
                                                             y="eroded_kinetic_energy",
                                                             x="time")
-        ErodedInternalEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Internal Energy",
+    ErodedInternalEnergy = simulation_dataclasses.DataVisualizationDefinition(name= part + " Eroded Internal Energy",
                                                             part_of= "Part Energy" + part,
                                                             type="ENERGY_PART",
                                                             ID= part,
