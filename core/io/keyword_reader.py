@@ -108,9 +108,10 @@ def get_dyna_contact(cards_dict: dict) -> dict:
     """
     contacts = {}
     for card in cards_dict:
-        if 'CONTACT' in card:
-            contact_id = int(cards_dict[card][0].split()[0].strip())
-            contact_name = cards_dict[card][0].split()[1].strip()
+        if 'CONTACT_AUTOMATIC' in card:
+            line_1 = cards_dict[card][0]
+            contact_id = int(line_1[:10].split()[0].strip())
+            contact_name = line_1[10:30].split()[0].strip()
             contacts[contact_name] = contact_id
     return contacts
 
@@ -120,3 +121,42 @@ def get_selected_part(desired_parts: str, part_dict: dict) -> list:
         if desired_parts in key:
             part_to_analyze.append(key)
     return part_to_analyze
+
+def get_dyna_seatbelt(cards_dict: dict) -> dict:
+    """
+    Extracts the seatbelt information from the LS-DYNA keyword cards.
+
+    Parameters:
+    cards_dict (dict): A dictionary containing the LS-DYNA keyword cards.
+
+    Returns:
+    dict: A dictionary mapping seatbelt IDs to seatbelt names.
+    """
+    pretensioners = {}
+    sliprings = {}
+    retractors = {}
+    seatbelts = {}
+    for card in cards_dict:
+        if 'ELEMENT_SEATBELT_PRETENSIONER' in card:
+            line_1 = cards_dict[card][0]
+            line_2 = cards_dict[card][1]
+            pretensioner_id = int(line_1[:10].strip())
+            pretensioner_name = 'pretensioner_' + pretensioner_id.__str__()
+            pretensioners[pretensioner_name] = pretensioner_id
+        if 'DATABASE_HISTORY_SEATBELT_SLIPRING_ID' in card:
+            for line in cards_dict[card]:
+                slipring_id = int(line[:10].strip())
+                slipring_name = line[10:].strip()
+                sliprings[slipring_name] = slipring_id
+        if 'DATABASE_HISTORY_SEATBELT_RETRACTOR_ID' in card:
+            for line in cards_dict[card]:
+                retractor_id = int(line[:10].strip())
+                retractor_name = line[10:].strip()
+                retractors[retractor_name] = retractor_id
+        if 'DATABASE_HISTORY_SEATBELT_ID' in card:
+            for line in cards_dict[card]:
+                seatbelt_id = int(line[:10].strip())
+                seatbelt_name = line[10:].strip()
+                seatbelts[seatbelt_name] = seatbelt_id
+
+    return seatbelts, retractors, sliprings, pretensioners

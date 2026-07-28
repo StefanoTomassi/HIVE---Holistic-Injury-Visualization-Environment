@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from Strain_limits_and_ROM import strain_limits
 def get_strain(dr, p):
     """
     
@@ -27,7 +30,7 @@ def get_segment_from_label(joint_label):
     return seg
 
 def boxplot_strain(max_strain, selected_components):
-    plt.figure(figsize=figsize)
+    plt.figure(figsize=[12,7])
     keys = list(max_strain.keys())
     values = [max_strain[k][0]*100 for k in keys]
     for i, label in enumerate(keys):
