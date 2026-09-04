@@ -150,7 +150,7 @@ def get_elements_from_keyword(nodes_dir, part_dir):
     for key in keyword_nodes.keys():
         if '*ELEMENT_SHELL' in key:
             for line in keyword_nodes[key]:
-                line = line.strip().split(' ')
+                line = line.strip().split()
                 id_el = int(line[0])
                 nodes_part = int(line[1])
                 nodes = [int(node) for node in line[2:6]]

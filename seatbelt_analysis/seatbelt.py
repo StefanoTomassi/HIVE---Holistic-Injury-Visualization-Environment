@@ -9,7 +9,7 @@ import csv
 import core.io.keyword_reader as kr
 import core.io.create_criteria as cc
 import core.io.create_objects as co
-from core.io.select_folder import choose_folder, choose_file
+from core.io.select_folder import choose_folder, choose_file, choose_files
 import core.io.directories_files as directories_files
 import sys
 from pathlib import Path

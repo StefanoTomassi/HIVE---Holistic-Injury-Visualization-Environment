@@ -1,3 +1,35 @@
+from typing import Tuple
+
+
+def _parse_fixed_width_id(line: str) -> str:
+    """Read an LS-DYNA ID from columns 1-10, with whitespace fallback."""
+    fields = line.strip().split()
+    if not fields:
+        raise ValueError("Cannot parse an ID from an empty keyword line.")
+
+    fixed_width_id = line[:10].strip()
+    if fixed_width_id:
+        try:
+            int(fixed_width_id)
+        except ValueError:
+            pass
+        else:
+            return fixed_width_id
+    return fields[0]
+
+
+def _parse_fixed_width_id_name(line: str) -> Tuple[str, str]:
+    """Read an ID and name from a fixed-width LS-DYNA record."""
+    element_id = _parse_fixed_width_id(line)
+    element_name = line[10:].strip()
+    fields = line.strip().split()
+    if not element_name and len(fields) > 1:
+        element_name = fields[1]
+    if not element_name:
+        element_name = "object_" + element_id
+    return element_id, element_name
+
+
 def read_keywords(dir_file: str) -> dict:
     """Reads an LS-DYNA keyword file and returns a dictionary of keywords and their associated lines.
     Args:
@@ -35,10 +67,11 @@ def get_dyna_history_node_id(elements: list) -> dict:
     dict: A dictionary mapping node names to node IDs.
     """
     element_dict = {}
-    for i, element in enumerate(elements):
-        element = element.strip().split(' ')
-        element_id = element[0]
-        element_name = element[1]
+    for element in elements:
+        if not element.strip():
+            continue
+
+        element_id, element_name = _parse_fixed_width_id_name(element)
         element_dict[element_name] = element_id
     return element_dict
 
@@ -54,9 +87,12 @@ def get_dyna_parts(cards_dict: dict) -> dict:
     """
     parts = {}
     for card in cards_dict:
-        if '*PART' in card:
-            part_id = int(cards_dict[card][1].split()[0].strip())
-            part_name = cards_dict[card][0].strip()
+        if card.startswith("*PART_") and card[len("*PART_"):].isdigit():
+            lines = [line for line in cards_dict[card] if line.strip()]
+            if len(lines) < 2:
+                continue
+            part_name = lines[0].strip()
+            part_id = int(_parse_fixed_width_id(lines[1]))
             parts[part_name] = part_id
     return parts
 
@@ -73,8 +109,10 @@ def get_dyna_joints(cards_dict: dict) -> dict:
     joints = {}
     for card in cards_dict:
         if '*CONSTRAINED_JOINT' in card and 'STIFFNESS' not in card:
-            joint_id = int(cards_dict[card][0].split()[0].strip())
-            joint_name = cards_dict[card][0].split()[1].strip()
+            lines = [line for line in cards_dict[card] if line.strip()]
+            if not lines:
+                continue
+            joint_id, joint_name = _parse_fixed_width_id_name(lines[0])
             joints[joint_name] = joint_id
     return joints
 
@@ -91,8 +129,10 @@ def get_dyna_boundary_motions(cards_dict: dict) -> dict:
     boundary_motions = {}
     for card in cards_dict:
         if 'BOUNDARY_PRESCRIBED_MOTION' in card:
-            motion_id = int(cards_dict[card][0].split()[0].strip())
-            motion_name = cards_dict[card][0].split()[1].strip()
+            lines = [line for line in cards_dict[card] if line.strip()]
+            if not lines:
+                continue
+            motion_id, motion_name = _parse_fixed_width_id_name(lines[0])
             boundary_motions[motion_name] = motion_id
     return boundary_motions
 
@@ -109,9 +149,10 @@ def get_dyna_contact(cards_dict: dict) -> dict:
     contacts = {}
     for card in cards_dict:
         if 'CONTACT_AUTOMATIC' in card:
-            line_1 = cards_dict[card][0]
-            contact_id = int(line_1[:10].split()[0].strip())
-            contact_name = line_1[10:30].split()[0].strip()
+            lines = [line for line in cards_dict[card] if line.strip()]
+            if not lines:
+                continue
+            contact_id, contact_name = _parse_fixed_width_id_name(lines[0])
             contacts[contact_name] = contact_id
     return contacts
 
@@ -138,25 +179,29 @@ def get_dyna_seatbelt(cards_dict: dict) -> dict:
     seatbelts = {}
     for card in cards_dict:
         if 'ELEMENT_SEATBELT_PRETENSIONER' in card:
-            line_1 = cards_dict[card][0]
-            line_2 = cards_dict[card][1]
-            pretensioner_id = int(line_1[:10].strip())
+            lines = [line for line in cards_dict[card] if line.strip()]
+            if not lines:
+                continue
+            pretensioner_id = int(_parse_fixed_width_id(lines[0]))
             pretensioner_name = 'pretensioner_' + pretensioner_id.__str__()
             pretensioners[pretensioner_name] = pretensioner_id
         if 'DATABASE_HISTORY_SEATBELT_SLIPRING_ID' in card:
             for line in cards_dict[card]:
-                slipring_id = int(line[:10].strip())
-                slipring_name = line[10:].strip()
+                if not line.strip():
+                    continue
+                slipring_id, slipring_name = _parse_fixed_width_id_name(line)
                 sliprings[slipring_name] = slipring_id
         if 'DATABASE_HISTORY_SEATBELT_RETRACTOR_ID' in card:
             for line in cards_dict[card]:
-                retractor_id = int(line[:10].strip())
-                retractor_name = line[10:].strip()
+                if not line.strip():
+                    continue
+                retractor_id, retractor_name = _parse_fixed_width_id_name(line)
                 retractors[retractor_name] = retractor_id
         if 'DATABASE_HISTORY_SEATBELT_ID' in card:
             for line in cards_dict[card]:
-                seatbelt_id = int(line[:10].strip())
-                seatbelt_name = line[10:].strip()
+                if not line.strip():
+                    continue
+                seatbelt_id, seatbelt_name = _parse_fixed_width_id_name(line)
                 seatbelts[seatbelt_name] = seatbelt_id
 
     return seatbelts, retractors, sliprings, pretensioners

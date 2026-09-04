@@ -1,5 +1,8 @@
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import List, Union
+
+
 @dataclass
 class SimulationData:
     module_type: str #Whiplash, global energy, ...
@@ -40,9 +43,53 @@ class DataVisualizationDefinition:
     x: str
 
 @dataclass
-class CriteriaDefinition:
-    name: str
-    part_of: str
+class CriteriaParamObjectData:
+    """Defines the object data used by an injury criterion."""
+
     type: str
     ID: str
-    criterion: str
+    strain_stress: str
+
+
+@dataclass
+class DataVector:
+    """Defines a vector of simulation data used by a criterion."""
+
+    type: str
+    ID: str
+    array: List[str]
+
+
+@dataclass
+class PercentileParameters:
+    """Parameters for a percentile-based criterion."""
+
+    object_data: CriteriaParamObjectData
+    selection_tension_compression: str
+    integration_point: str
+    percentile: float
+
+
+@dataclass
+class MaxParameters:
+    """Parameters for a maximum-value criterion."""
+
+    data_vector: DataVector
+
+
+@dataclass
+class CriteriaFunction:
+    """Describes the operation and parameters used by a criterion."""
+
+    name: str
+    param: Union[PercentileParameters, MaxParameters]
+
+
+@dataclass
+class CriteriaDefinition:
+    """Defines a criterion and its nested evaluation function."""
+
+    name: str
+    type_of_criteria: str
+    part_of: str
+    function: CriteriaFunction
