@@ -1,17 +1,19 @@
 """Whiplash model input discovery."""
 
 from pathlib import Path
-from typing import Dict, List, Mapping, Sequence, Union
+from typing import Dict, List, Mapping, Sequence, Tuple, Union
 
 from dynasaur.plugins.criteria_controller import CriteriaController
+from dynasaur.plugins.data_visualization_controller import DataVisualizationController
 
 from core.dataclasses.simulation_dataclasses import (
     CriteriaDefinition,
     CriteriaFunction,
     CriteriaParamObjectData,
+    DataVisualizationDefinition,
     PercentileParameters,
 )
-from core.io.create_criteria import write_criteria_file
+from core.io.create_criteria import create_data_visualization, write_criteria_file
 from core.io.create_objects import create_objects, write_object_file
 from core.io.keyword_reader import (
     get_dyna_history_node_id,
@@ -70,6 +72,40 @@ def create_model_node_objects(cards: Mapping[str, Sequence[str]]) -> List[dict]:
             nodes.update(get_dyna_history_node_id(list(lines)))
     return create_objects(type_obj="NODE", data=nodes)
 
+
+def create_node_kinematics_data_visualization(
+    nodes: Mapping[str, int],
+    quantities = ["x_acceleration", "y_acceleration", "z_acceleration"]
+) -> Tuple[List[DataVisualizationDefinition], List[dict]]:
+    """Create Dynasaur visualizations for node x-acceleration histories.
+
+    Returns both the typed definitions used by the whiplash workflow and the
+    serialized definitions written to the criteria procedure file.
+    """
+    
+    visualizations = [
+        DataVisualizationDefinition(
+            name=f"{node_name}_{quantity}",
+            part_of=node_name,
+            type="NODE",
+            ID=node_name,
+            y=quantity,
+            x="time",
+        )
+        for node_name in nodes for quantity in quantities
+    ]
+    definitions: List[dict] = []
+    for visualization in visualizations:
+        create_data_visualization(
+            items=definitions,
+            name=visualization.name,
+            part_of=visualization.part_of,
+            ID=visualization.ID,
+            crit_type=visualization.type,
+            x_crit=visualization.x,
+            y_crit=visualization.y,
+        )
+    return visualizations, definitions
 
 def create_part_stress_criteria(
     parts: Mapping[str, int],
@@ -144,10 +180,19 @@ def main() -> None:
     parts = read_model_parts([Path(path) for path in keyword_files])
     all_objects.extend(create_model_part_objects(parts))
     criteria = create_part_stress_criteria(parts)
+    node_visualizations: List[DataVisualizationDefinition] = []
+    data_visualization_definitions: List[dict] = []
+    nodes: Dict[str, int] = {}
 
     for keyword_file in keyword_files:
         cards = read_keywords(keyword_file)
         all_objects.extend(create_model_node_objects(cards))
+        for keyword, lines in cards.items():
+            if keyword.startswith("*DATABASE_HISTORY_NODE_ID"):
+                nodes.update(get_dyna_history_node_id(list(lines)))
+    node_visualizations, data_visualization_definitions = (
+        create_node_kinematics_data_visualization(nodes)
+    )
 
     simulation_dir = Path(simulation_files_dir)
     object_definition = simulation_dir / "object_definition_whiplash.def"
@@ -157,7 +202,7 @@ def main() -> None:
     write_object_file(dir=object_definition, objects=all_objects)
     write_criteria_file(
         dir=criteria_definition,
-        data_visualization=[],
+        data_visualization=data_visualization_definitions,
         criteria=criteria,
     )
 
@@ -178,6 +223,24 @@ def main() -> None:
             {"criteria": criterion.part_of + "_" + criterion.name}
         )
     criteria_controller.write_CSV(output_dir, filename="whiplash_criteria.csv")
+
+    data_visualization_controller = DataVisualizationController(
+        calculation_procedure_def_file=str(criteria_definition),
+        object_def_file=str(object_definition),
+        data_source=data_source,
+    )
+    for visualization in node_visualizations:
+        data_visualization_controller.calculate(
+            {
+                "visualization": visualization.part_of + "_" + visualization.name,
+                "x_label": visualization.x + " [ms]",
+                "y_label": visualization.y + " [mm/ms^2]",
+            }
+        )
+    data_visualization_controller.write_CSV(
+        output_dir,
+        filename="whiplash_node_x_acceleration.csv",
+    )
 
 
 if __name__ == "__main__":
