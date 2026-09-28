@@ -1,6 +1,6 @@
 from dash import dcc, html, register_page
 
-from GUI.layout.Plots.signal_plots import plot_random_measurement
+from GUI.layout.Plots.signal_plots import plot_measurements
 
 
 def generic_dropdown() -> html.Div:
@@ -11,7 +11,7 @@ def generic_dropdown() -> html.Div:
             
             html.H2("Select analysis data"),
             render(),
-            plot_random_measurement(),
+            plot_measurements(),
         ],
     )
 

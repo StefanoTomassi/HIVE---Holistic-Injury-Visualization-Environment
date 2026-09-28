@@ -11,8 +11,10 @@ from dash import Dash, Input, Output, dcc, html
 CSV_SEPARATOR = ";"
 METADATA_ROWS = 4
 SIGNAL_PART_ID = "signal-part-dropdown"
-SIGNAL_MEASUREMENT_ID = "signal-measurement-dropdown"
-SIGNAL_GRAPH_ID = "signal-measurement-graph"
+SIGNAL_PLOT_ONE_SELECTION_ID = "signal-plot-one-selection"
+SIGNAL_PLOT_TWO_SELECTION_ID = "signal-plot-two-selection"
+SIGNAL_GRAPH_ONE_ID = "signal-measurement-graph-one"
+SIGNAL_GRAPH_TWO_ID = "signal-measurement-graph-two"
 
 
 @dataclass
@@ -97,12 +99,12 @@ def _measurement_pairs(signal_data: SignalData) -> List[Tuple[int, int]]:
     return pairs
 
 
-def _measurement_figure(
+def _measurement_trace(
     signal_data: SignalData,
     time_index: int,
     value_index: int,
-) -> go.Figure:
-    """Create a line figure for one selected measurement."""
+) -> go.Scatter:
+    """Create a line trace for one selected measurement."""
     time_column = signal_data.dataframe.iloc[:, time_index]
     value_column = signal_data.dataframe.iloc[:, value_index]
 
@@ -110,40 +112,81 @@ def _measurement_figure(
     measurement_values = pd.to_numeric(value_column, errors="coerce")
     valid_values = time_values.notna() & measurement_values.notna()
     metadata = signal_data.metadata[value_index]
-    figure = go.Figure(
-        data=[
-            go.Scatter(
-                x=time_values[valid_values],
-                y=measurement_values[valid_values],
-                mode="lines",
-                name=metadata["quantity"],
-            )
-        ]
+    return go.Scatter(
+        x=time_values[valid_values],
+        y=measurement_values[valid_values],
+        mode="lines",
+        name=f"{metadata['part']} - {metadata['quantity']}",
     )
+
+
+def _measurement_figure(
+    traces: List[Tuple[SignalData, int, int]],
+) -> go.Figure:
+    """Create a figure containing one or more selected measurements."""
+    figure = go.Figure()
+    for signal_data, time_index, value_index in traces:
+        figure.add_trace(_measurement_trace(signal_data, time_index, value_index))
+        metadata = signal_data.metadata[value_index]
+        figure.update_layout(
+            xaxis_title=signal_data.metadata[time_index]["variable"],
+            yaxis_title=metadata["variable"],
+        )
     figure.update_layout(
-        title=f"{metadata['part']} - {metadata['quantity']}",
-        xaxis_title=signal_data.metadata[time_index]["variable"],
-        yaxis_title=metadata["variable"],
+        title="Selected measurements",
     )
     return figure
 
 
 def register_signal_callbacks(app: Dash) -> None:
-    """Register callbacks driven by the selected CSV path."""
+    """Register callbacks driven by all selected CSV paths."""
 
-    def load_measurements(csv_paths: Optional[List[str]]) -> Tuple[
-        Optional[SignalData], Dict[str, List[Tuple[str, int, int]]]
-    ]:
+    def load_measurements(
+        csv_paths: Optional[List[str]],
+    ) -> Dict[str, Tuple[str, SignalData, int, int]]:
+        catalog: Dict[str, Tuple[str, SignalData, int, int]] = {}
         if not csv_paths:
-            return None, {}
-        signal_data = read_csv_data(None, csv_paths[0])
-        measurements_by_part: Dict[str, List[Tuple[str, int, int]]] = {}
-        for time_index, value_index in _measurement_pairs(signal_data):
+            return catalog
+        for file_index, csv_path in enumerate(csv_paths):
+            signal_data = read_csv_data(None, csv_path)
+            for time_index, value_index in _measurement_pairs(signal_data):
+                key = f"{file_index}:{value_index}"
+                catalog[key] = (
+                    Path(csv_path).name,
+                    signal_data,
+                    time_index,
+                    value_index,
+                )
+        return catalog
+
+    def measurement_options(
+        catalog: Dict[str, Tuple[str, SignalData, int, int]],
+        parts: Optional[List[str]],
+    ) -> List[dict]:
+        options = []
+        for key, (file_name, signal_data, _, value_index) in catalog.items():
             metadata = signal_data.metadata[value_index]
-            measurements_by_part.setdefault(metadata["part"], []).append(
-                (metadata["quantity"], time_index, value_index)
-            )
-        return signal_data, measurements_by_part
+            if not parts or metadata["part"] in parts:
+                options.append(
+                    {
+                        "label": (
+                            f"{metadata['part']} - {metadata['quantity']} "
+                            f"({file_name})"
+                        ),
+                        "value": key,
+                    }
+                )
+        return options
+
+    def selected_traces(
+        catalog: Dict[str, Tuple[str, SignalData, int, int]],
+        selected_values: Optional[List[str]],
+    ) -> List[Tuple[SignalData, int, int]]:
+        return [
+            (catalog[key][1], catalog[key][2], catalog[key][3])
+            for key in selected_values or []
+            if key in catalog
+        ]
 
     @app.callback(
         Output(SIGNAL_PART_ID, "options"),
@@ -152,70 +195,82 @@ def register_signal_callbacks(app: Dash) -> None:
     )
     def update_parts(
         csv_paths: Optional[List[str]],
-    ) -> Tuple[List[dict], Optional[str]]:
-        _, measurements_by_part = load_measurements(csv_paths)
-        parts = sorted(measurements_by_part)
-        return (
-            [{"label": part, "value": part} for part in parts],
-            parts[0] if parts else None,
+    ) -> Tuple[List[dict], List[str]]:
+        catalog = load_measurements(csv_paths)
+        parts = sorted(
+            {
+                signal_data.metadata[value_index]["part"]
+                for _, signal_data, _, value_index in catalog.values()
+            }
+        )
+        return [{"label": part, "value": part} for part in parts], (
+            parts if parts else []
         )
 
     @app.callback(
-        Output(SIGNAL_MEASUREMENT_ID, "options"),
-        Output(SIGNAL_MEASUREMENT_ID, "value"),
+        Output(SIGNAL_PLOT_ONE_SELECTION_ID, "options"),
+        Output(SIGNAL_PLOT_ONE_SELECTION_ID, "value"),
+        Output(SIGNAL_PLOT_TWO_SELECTION_ID, "options"),
+        Output(SIGNAL_PLOT_TWO_SELECTION_ID, "value"),
         Input("csv-data-selection", "data"),
         Input(SIGNAL_PART_ID, "value"),
     )
     def update_measurements(
-        csv_paths: Optional[List[str]], part: Optional[str]
-    ) -> Tuple[List[dict], Optional[str]]:
-        _, measurements_by_part = load_measurements(csv_paths)
-        options = [
-            {"label": quantity, "value": str(value_index)}
-            for quantity, _, value_index in measurements_by_part.get(part or "", [])
-        ]
-        return options, options[0]["value"] if options else None
+        csv_paths: Optional[List[str]], parts: Optional[List[str]]
+    ) -> Tuple[List[dict], List[str], List[dict], List[str]]:
+        options = measurement_options(load_measurements(csv_paths), parts)
+        first_value = [options[0]["value"]] if options else []
+        return options, first_value, options, []
 
     @app.callback(
-        Output(SIGNAL_GRAPH_ID, "figure"),
+        Output(SIGNAL_GRAPH_ONE_ID, "figure"),
+        Output(SIGNAL_GRAPH_TWO_ID, "figure"),
         Input("csv-data-selection", "data"),
-        Input(SIGNAL_PART_ID, "value"),
-        Input(SIGNAL_MEASUREMENT_ID, "value"),
+        Input(SIGNAL_PLOT_ONE_SELECTION_ID, "value"),
+        Input(SIGNAL_PLOT_TWO_SELECTION_ID, "value"),
     )
-    def update_plot(
+    def update_plots(
         csv_paths: Optional[List[str]],
-        part: Optional[str],
-        value_index: Optional[str],
-    ) -> go.Figure:
-        signal_data, measurements_by_part = load_measurements(csv_paths)
-        if signal_data is None:
-            return go.Figure()
-        entries = measurements_by_part.get(part or "", [])
-        selected = next(
-            (entry for entry in entries if str(entry[2]) == value_index),
-            None,
+        plot_one_values: Optional[List[str]],
+        plot_two_values: Optional[List[str]],
+    ) -> Tuple[go.Figure, go.Figure]:
+        catalog = load_measurements(csv_paths)
+        return (
+            _measurement_figure(selected_traces(catalog, plot_one_values)),
+            _measurement_figure(selected_traces(catalog, plot_two_values)),
         )
-        if selected is None:
-            return go.Figure()
-        _, time_index, selected_value_index = selected
-        return _measurement_figure(signal_data, time_index, selected_value_index)
 
-def plot_random_measurement() -> html.Div:
+def plot_measurements() -> html.Div:
     """Render empty dependent dropdowns populated from the selected CSV."""
     return html.Div(
         [
             dcc.Dropdown(
                 id=SIGNAL_PART_ID,
                 options=[],
-                value=None,
-                clearable=False,
+                value=[],
+                multi=True,
+                clearable=True,
+                placeholder="Select one or more parts",
             ),
+            html.H6("Plot 1 measurements"),
             dcc.Dropdown(
-                id=SIGNAL_MEASUREMENT_ID,
+                id=SIGNAL_PLOT_ONE_SELECTION_ID,
                 options=[],
-                value=None,
-                clearable=False,
+                value=[],
+                multi=True,
+                clearable=True,
+                placeholder="Select measurements for plot 1",
             ),
-            dcc.Graph(id=SIGNAL_GRAPH_ID),
+            html.H6("Plot 2 measurements"),
+            dcc.Dropdown(
+                id=SIGNAL_PLOT_TWO_SELECTION_ID,
+                options=[],
+                value=[],
+                multi=True,
+                clearable=True,
+                placeholder="Select measurements for plot 2",
+            ),
+            dcc.Graph(id=SIGNAL_GRAPH_ONE_ID),
+            dcc.Graph(id=SIGNAL_GRAPH_TWO_ID),
         ]
     )

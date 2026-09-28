@@ -1,8 +1,12 @@
-from GUI.layout.Plots.signal_plots import plot_random_measurement
-
-figure = plot_random_measurement(
-    r"C:\Users\d069056\Desktop\git\output_data\Whiplash_example\whiplash_node_x_acceleration.csv",
-    seed=7,
+from GUI.layout.Plots.signal_plots import (
+    _measurement_figure,
+    _measurement_pairs,
+    read_csv_data,
 )
+
+path = r"C:\Users\d069056\Desktop\git\output_data\Whiplash_example\whiplash_node_x_acceleration.csv"
+signal_data = read_csv_data(None, path)
+pair = _measurement_pairs(signal_data)[0]
+figure = _measurement_figure([(signal_data, pair[0], pair[1])])
 
 figure.show()
