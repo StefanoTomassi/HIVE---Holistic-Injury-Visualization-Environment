@@ -87,16 +87,19 @@ def read_csv_data(
     return SignalData(dataframe=dataframe, metadata=metadata)
 
 
-def _measurement_pairs(signal_data: SignalData) -> List[Tuple[int, int]]:
-    """Return time/value column pairs from the signal metadata."""
-    pairs = [
+def find_measurement_pairs(signal_data: SignalData) -> List[Tuple[int, int]]:
+    """Return available time/value pairs without requiring them.
+
+    Signal CSVs contain one ``time`` column followed by each measured value.
+    Other Dynasaur CSVs, such as scalar criteria output, have no time column
+    and are valid inputs for other dashboard components. They therefore
+    produce an empty list instead of raising an error.
+    """
+    return [
         (index, index + 1)
         for index, metadata in enumerate(signal_data.metadata[:-1])
-        if metadata["variable"].lower() == "time"
+        if metadata["variable"].strip().lower() == "time"
     ]
-    if not pairs:
-        raise ValueError("The CSV does not contain a time/value measurement pair.")
-    return pairs
 
 
 def _measurement_trace(
@@ -149,7 +152,7 @@ def register_signal_callbacks(app: Dash) -> None:
             return catalog
         for file_index, csv_path in enumerate(csv_paths):
             signal_data = read_csv_data(None, csv_path)
-            for time_index, value_index in _measurement_pairs(signal_data):
+            for time_index, value_index in find_measurement_pairs(signal_data):
                 key = f"{file_index}:{value_index}"
                 catalog[key] = (
                     Path(csv_path).name,

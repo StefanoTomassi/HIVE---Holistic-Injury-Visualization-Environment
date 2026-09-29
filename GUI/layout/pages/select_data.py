@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 import dash_bootstrap_components as dbc
-from dash import Dash, Input, Output, ctx, dcc, html, register_page
+from dash import Dash, Input, Output, State, ctx, dcc, html, register_page
 from dash.exceptions import PreventUpdate
 
 from core.io.select_folder import choose_files, choose_folder
@@ -18,11 +18,19 @@ def register_callbacks(app: Dash) -> None:
         Output("d3plot-data-selection-label", "children"),
         Input("csv-data-file-button", "n_clicks"),
         Input("d3plot-data-file-button", "n_clicks"),
+        State("csv-data-selection", "data"),
+        State("csv-data-selection-label", "children"),
+        State("d3plot-data-selection", "data"),
+        State("d3plot-data-selection-label", "children"),
         prevent_initial_call=True,
     )
     def select_data(
         csv_clicks: Optional[int],
         d3plot_clicks: Optional[int],
+        current_csv_paths: Optional[List[str]],
+        current_csv_label: str,
+        current_d3plot_folder: Optional[str],
+        current_d3plot_label: str,
     ) -> Tuple[List[str], str, Optional[str], str]:
         """Open the appropriate native selector for the clicked card."""
         if ctx.triggered_id == "csv-data-file-button":
@@ -32,25 +40,39 @@ def register_callbacks(app: Dash) -> None:
                 "Select CSV data files",
                 filetypes=(("CSV files", "*.csv"), ("All files", "*.*")),
             )
+            if not selected_files:
+                return (
+                    current_csv_paths or [],
+                    current_csv_label,
+                    current_d3plot_folder,
+                    current_d3plot_label,
+                )
             paths = [str(Path(path).resolve()) for path in selected_files]
             label = (
                 f"{len(paths)} CSV file(s) selected:\n {', '.join(paths)}"
                 if paths
                 else "No CSV files selected."
             )
-            return paths, label, None, "No d3plot folder selected."
+            return paths, label, current_d3plot_folder, current_d3plot_label
 
         if ctx.triggered_id == "d3plot-data-file-button":
             if not d3plot_clicks or d3plot_clicks < 1:
                 raise PreventUpdate
             selected_folder = choose_folder("Select the folder containing d3plot")
+            if not selected_folder:
+                return (
+                    current_csv_paths or [],
+                    current_csv_label,
+                    current_d3plot_folder,
+                    current_d3plot_label,
+                )
             folder = str(Path(selected_folder).resolve()) if selected_folder else None
             label = (
                 f"Selected d3plot folder: {folder}"
                 if folder
                 else "No d3plot folder selected."
             )
-            return [], "No CSV files selected.", folder, label
+            return current_csv_paths or [], current_csv_label, folder, label
         raise PreventUpdate
 
 def select_simulation_data() -> html.Div:

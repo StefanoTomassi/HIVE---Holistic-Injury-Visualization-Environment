@@ -4,7 +4,7 @@ You are assisting with HIVE (Holistic Injury Visualization Environment), a Pytho
 
 ## Tech stack
 
-- Backend: Python 3.8+, pandas, numpy, matplotlib, seaborn, typing, dataclasses, pathlib, visualizer (by jkneifl on github), ls-reader
+- Backend: Python 3.8+, pandas, numpy, matplotlib, seaborn, typing, dataclasses, pathlib, visualizer (by jkneifl on github), ls-reader, pyvista
 - LS‑DYNA I/O: Dynasaur (binary binout reader), lsreader and visualizer (d3plot file extraction and visualization).
 - Frontend: HTML/CSS/JS (or your chosen stack, e.g. Streamlit/Plotly/Dash/FastAPI + simple frontend).
 - Tooling: VSCode, Git, pytest, black, ruff/flake8, mypy (optional).
