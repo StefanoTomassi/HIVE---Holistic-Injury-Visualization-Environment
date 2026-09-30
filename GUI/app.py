@@ -2,7 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import Dash, html
 from dash import dcc
-from GUI.layout.pages.animation_curtain import (
+from GUI.layout.pages.curtain import (
     animation_curtain,
     register_animation_callbacks,
 )
