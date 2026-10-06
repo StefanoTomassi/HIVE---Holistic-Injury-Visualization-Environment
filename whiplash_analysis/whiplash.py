@@ -18,6 +18,7 @@ from core.io.create_objects import create_objects, write_object_file
 from core.io.keyword_reader import (
     get_dyna_history_node_id,
     get_dyna_parts,
+    get_elements,
     read_keywords,
 )
 from core.io.select_folder import choose_files, choose_folder
@@ -183,18 +184,37 @@ def main() -> None:
     node_visualizations: List[DataVisualizationDefinition] = []
     data_visualization_definitions: List[dict] = []
     nodes: Dict[str, int] = {}
+    simulation_dir = Path(simulation_files_dir)
+    element_cards: Dict[str, Sequence[str]] = {}
+    element_card_counters = {"shell": 0, "solid": 0}
 
     for keyword_file in keyword_files:
         cards = read_keywords(keyword_file)
+        for keyword, lines in cards.items():
+            if keyword == "*ELEMENT_SHELL" or keyword.startswith("*ELEMENT_SHELL_"):
+                element_card_counters["shell"] += 1
+                element_cards[
+                    f"*ELEMENT_SHELL_{element_card_counters['shell']}"
+                ] = lines
+            elif keyword == "*ELEMENT_SOLID" or keyword.startswith("*ELEMENT_SOLID_"):
+                element_card_counters["solid"] += 1
+                element_cards[
+                    f"*ELEMENT_SOLID_{element_card_counters['solid']}"
+                ] = lines
         all_objects.extend(create_model_node_objects(cards))
         for keyword, lines in cards.items():
             if keyword.startswith("*DATABASE_HISTORY_NODE_ID"):
                 nodes.update(get_dyna_history_node_id(list(lines)))
+
+    get_elements(
+        element_cards,
+        pickle_path=simulation_dir / "element_connectivity.pkl",
+    )
+
     node_visualizations, data_visualization_definitions = (
         create_node_kinematics_data_visualization(nodes)
     )
 
-    simulation_dir = Path(simulation_files_dir)
     object_definition = simulation_dir / "object_definition_whiplash.def"
     criteria_definition = simulation_dir / "criteria_definition_whiplash.def"
     data_source = str(simulation_dir / "binout*")
