@@ -1,5 +1,5 @@
 import numpy as np
-from Strain_limits_and_ROM import ROM_labels, Spine_labels
+from whiplash_analysis.reference_values import ROM_labels, Spine_labels
 import matplotlib as mpl
 import core.io.create_objects as create_objects 
 import matplotlib.pyplot as plt

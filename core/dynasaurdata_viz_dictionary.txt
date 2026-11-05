@@ -1,65 +1,424 @@
-DEFFOrc : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
-RBDout : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
-BDNout : ['x_force', 'y_force', 'z_force', 'displacement', 'resultant_force']
-Disbout : ['r_dis_axial', 'moment_s', 'rslt_nt', 'r_dis_nt', 't_dir_y', 'axial_rot',
-                          's_dir_y', 'r_dis_ns', 'matid', 's_dir_x', 'torsion', 'rslt_ns', 'axial_z', 'mtype',
-                          't_dir_x', 'rot_s', 'axial_y', 's_dir_z', 'rot_t', 'rslt_axial', 'moment_t', 'axial_x',
-                          't_dir_z']
-PartDisbout : ['r_dis_axial', 'moment_s', 'rslt_nt', 'r_dis_nt', 't_dir_y', 'axial_rot',
-                          's_dir_y', 'r_dis_ns', 'matid', 's_dir_x', 'torsion', 'rslt_ns', 'axial_z', 'mtype',
-                          't_dir_x', 'rot_s', 'axial_y', 's_dir_z', 'rot_t', 'rslt_axial', 'moment_t', 'axial_x',
-                          't_dir_z']
-Elout : ['axial', 'shear_s', 'shear_t', 'moment_s', 'moment_t', 'torsion'] #just for beam element!!
-Abstat: ['dm_dt_out', 'pressure', 'internal_energy', 'density', 'surface_area', 'dm_dt_in', 'dm_dt_outp',
-                          'reaction', 'volume', 'gas_temp', 'total_mass', 'dm_dt_outv']
-AbstatCPM: ['dm_dt_out', 'pressure', 'internal_energy', 'density', 'surface_area', 'dm_dt_in',
-                          'inflator_e', 'reaction', 'volume', 'gas_temp', 'total_mass', 'pres_particle', 'Trans_ke'] #just for beam element!!
-Glstat: ['global_y_velocity', 'internal_energy', 'kinetic_energy', 'percent_increase', 'ts_element',
-                          'energy_ratio_wo_eroded', 'spring_and_damper_energy', 'eroded_kinetic_energy',
-                          'num_bad_shells', 'energy_ratio', 'external_work', 'time_step', 'global_z_velocity',
-                          'global_x_velocity', 'eroded_internal_energy', 'time', 'total_energy',
-                          'system_damping_energy', 'hourglass_energy', 'sliding_interface_energy', 'cycle', 'ts_eltype',
-                          'joint_internal_energy', 'eroded_hourglass_energy', 'nzc', 'added_mass',
-                          'resultant_global_velocity', 'ts_part']
-Matsum : ['x_momentum', 'y_rbvelocity', 'z_rbvelocity', 'internal_energy', 'kinetic_energy',
-                          'max_shell_mass', 'y_momentum', 'mass', 'eroded_kinetic_energy', 'brick_id', 'max_brick_mass',
-                          'shell_id', 'eroded_internal_energy', 'z_momentum', 'hourglass_energy',
-                          'eroded_hourglass_energy', 'x_rbvelocity', 'energy_ratio', 'eroded_energy_ratio',
-                          'x_rbacceleration', 'y_acceleration', 'z_acceleration', 'x_rbdisplacement',
-                          'y_rbdisplacement', 'z_rbdisplacement', 'resultant_displacement', 'resultant_velocity',
-                          'resultant_acceleration', 'resultant_momentum', 'x_acceleration', 'y_acceleration',
-                          'z_acceleration']
-RigidBody : ['local_ax', 'local_ay', 'local_az', 'local_dx', 'local_dy', 'local_dz', 'local_vx',
-                          'local_vy', 'local_vz', 'local_rax', 'local_ray', 'local_raz', 'local_rdx', 'local_rdy',
-                          'local_rdz', 'local_rvx', 'local_rvy', 'local_rvz', 'global_x', 'global_y', 'global_z',
-                          'global_dx', 'global_dy', 'global_dz', 'global_ax', 'global_ay', 'global_az', 'global_vx',
-                          'global_vy', 'global_vz', 'global_rax', 'global_ray', 'global_raz', 'global_rdx',
-                          'global_rdy', 'global_rdz', 'global_rvx', 'global_rvy', 'global_rvz', 'dircos_11',
-                          'dircos_12', 'dircos_13', 'dircos_21', 'dircos_22', 'dircos_23', 'dircos_31', 'dircos_32',
-                          'dircos_33']
-BoundaryCondition : ['energy', 'y_force', 'x_force', 'xmoment', 'ymoment', 'zmoment',
-                          'z_force', 'etotal', 'x_total', 'y_total', 'z_total']
-Nodout : ['rx_velocity', 'ry_velocity', 'rz_velocity', 'rx_displacement', 'ry_displacement',
-                          'rz_displacement', 'rx_acceleration', 'ry_acceleration', 'rz_acceleration', 'x_coordinate',
-                          'y_coordinate', 'z_coordinate', 'x_displacement', 'y_displacement', 'z_displacement',
-                          'x_velocity', 'y_velocity', 'z_velocity', 'x_acceleration', 'y_acceleration',
-                          'z_acceleration', 'resultant_rotation', 'resultant_angular_velocity',
-                          'resultant_angular_acceleration', 'resultant_displacement', 'resultant_velocity',
-                          'resultant_acceleration']
-JointForc : ['energy', 'resultant_moment', 'resultant_force', 'x_force',  'y_force', 'z_force',
-                          'x_moment', 'y_moment', 'z_moment']
-JointType : ['alpha_moment_stiffness', 'd(gamma)_dt', 'joint_extra2',
-                          'alpha_degrees', 'alpha_moment_total', 'gamma_degrees', 'd(alpha)_dt', 'beta_degrees',
-                          'alpha_moment_damping', 'beta_moment_total', 'gamma_scale_factor',
-                          'beta_moment_damping', 'd(beta)_dt', 'beta_moment_stiffness']
-RCForc : ['x_moment', 'y_moment', 'z_moment', 'x_force', 'y_force', 'z_force', 'tie_count', 'mass',
-                          'tie_area', 'resultant_force']
-SBTout : ['belt_length', 'belt_force']
-SlipringOut : ['ring_slip']
-RetractorOut : ['retractor_pull_out', 'retractor_force']
-Secforc : ['x_force', 'y_force', 'z_force', 'x_moment', 'y_moment', 'z_moment',
-                          'x_centroid', 'y_centroid', 'z_centroid', 'total_force', 'total_moment', 'area']
-Sleout : ['total_friction', 'slave', 'total_master', 'master', 'cycle',
-                          'friction_energy', 'time', 'total_energy',
-                          'total_slave']
-
+# Dynasaur output files and their selectable time-series channels.
+DEFFOrc : {
+    "description": 'Discrete element data',
+    "filename": 'deforc',
+    "measurements": {
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'displacement': 'Displacement',
+        'resultant_force': 'Resultant force'
+    }
+}
+RBDout : {
+    "description": 'Rigid body data',
+    "filename": 'rbdout',
+    "measurements": {
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'displacement': 'Displacement',
+        'resultant_force': 'Resultant force'
+    }
+}
+BDNout : {
+    "description": 'Boundary conditions',
+    "filename": 'bndout',
+    "measurements": {
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'displacement': 'Displacement',
+        'resultant_force': 'Resultant force'
+    }
+}
+Disbout : {
+    "description": 'Discrete beam element data',
+    "filename": 'disbout',
+    "measurements": {
+        'r_dis_axial': 'Resultant axial displacement',
+        'moment_s': 'Moment s',
+        'rslt_nt': 'Resultant normal traction',
+        'r_dis_nt': 'Resultant normal displacement',
+        't_dir_y': 'T dir Y',
+        'axial_rot': 'Axial rot',
+        's_dir_y': 'S dir Y',
+        'r_dis_ns': 'Resultant shear displacement',
+        'matid': 'Material identifier',
+        's_dir_x': 'S dir X',
+        'torsion': 'Torsional moment',
+        'rslt_ns': 'Resultant shear force',
+        'axial_z': 'Axial Z',
+        'mtype': 'Material type',
+        't_dir_x': 'T dir X',
+        'rot_s': 'Rot s',
+        'axial_y': 'Axial Y',
+        's_dir_z': 'S dir Z',
+        'rot_t': 'Rot t',
+        'rslt_axial': 'Resultant axial force',
+        'moment_t': 'Moment t',
+        'axial_x': 'Axial X',
+        't_dir_z': 'T dir Z'
+    }
+}
+PartDisbout : {
+    "description": 'Part discrete beam element data',
+    "filename": 'disbout',
+    "measurements": {
+        'r_dis_axial': 'Resultant axial displacement',
+        'moment_s': 'Moment s',
+        'rslt_nt': 'Resultant normal traction',
+        'r_dis_nt': 'Resultant normal displacement',
+        't_dir_y': 'T dir Y',
+        'axial_rot': 'Axial rot',
+        's_dir_y': 'S dir Y',
+        'r_dis_ns': 'Resultant shear displacement',
+        'matid': 'Material identifier',
+        's_dir_x': 'S dir X',
+        'torsion': 'Torsional moment',
+        'rslt_ns': 'Resultant shear force',
+        'axial_z': 'Axial Z',
+        'mtype': 'Material type',
+        't_dir_x': 'T dir X',
+        'rot_s': 'Rot s',
+        'axial_y': 'Axial Y',
+        's_dir_z': 'S dir Z',
+        'rot_t': 'Rot t',
+        'rslt_axial': 'Resultant axial force',
+        'moment_t': 'Moment t',
+        'axial_x': 'Axial X',
+        't_dir_z': 'T dir Z'
+    }
+}
+Elout : {
+    "description": 'Element data',
+    "filename": 'elout',
+    "measurements": {
+        'axial': 'Axial',
+        'shear_s': 'Shear s',
+        'shear_t': 'Shear t',
+        'moment_s': 'Moment s',
+        'moment_t': 'Moment t',
+        'torsion': 'Torsional moment'
+    }
+}
+Abstat : {
+    "description": 'Airbag statistics',
+    "filename": 'abstat',
+    "measurements": {
+        'dm_dt_out': 'Output mass flow rate',
+        'pressure': 'Pressure',
+        'internal_energy': 'Internal energy',
+        'density': 'Density',
+        'surface_area': 'Surface area',
+        'dm_dt_in': 'Input mass flow rate',
+        'dm_dt_outp': 'Output mass flow rate due to porosity',
+        'reaction': 'Reaction',
+        'volume': 'Volume',
+        'gas_temp': 'Gas temperature',
+        'total_mass': 'Total mass',
+        'dm_dt_outv': 'Output mass flow rate due to venting'
+    }
+}
+AbstatCPM : {
+    "description": 'Airbag particle statistics',
+    "filename": 'abstat_pbm',
+    "measurements": {
+        'dm_dt_out': 'Output mass flow rate',
+        'pressure': 'Pressure',
+        'internal_energy': 'Internal energy',
+        'density': 'Density',
+        'surface_area': 'Surface area',
+        'dm_dt_in': 'Input mass flow rate',
+        'inflator_e': 'Inflator energy',
+        'reaction': 'Reaction',
+        'volume': 'Volume',
+        'gas_temp': 'Gas temperature',
+        'total_mass': 'Total mass',
+        'pres_particle': 'Particle pressure',
+        'Trans_ke': 'Translational kinetic energy'
+    }
+}
+Glstat : {
+    "description": 'Global data',
+    "filename": 'glstat',
+    "measurements": {
+        'global_y_velocity': 'Global Y velocity',
+        'internal_energy': 'Internal energy',
+        'kinetic_energy': 'Kinetic energy',
+        'percent_increase': 'Percentage increase',
+        'ts_element': 'Element controlling the time step',
+        'energy_ratio_wo_eroded': 'Energy ratio wo eroded',
+        'spring_and_damper_energy': 'Spring and damper energy',
+        'eroded_kinetic_energy': 'Eroded kinetic energy',
+        'num_bad_shells': 'Num bad shells',
+        'energy_ratio': 'Energy ratio',
+        'external_work': 'External work',
+        'time_step': 'Time step',
+        'global_z_velocity': 'Global Z velocity',
+        'global_x_velocity': 'Global X velocity',
+        'eroded_internal_energy': 'Eroded internal energy',
+        'time': 'Time',
+        'total_energy': 'Total energy',
+        'system_damping_energy': 'System damping energy',
+        'hourglass_energy': 'Hourglass energy',
+        'sliding_interface_energy': 'Sliding interface energy',
+        'cycle': 'Cycle',
+        'ts_eltype': 'Element type controlling the time step',
+        'joint_internal_energy': 'Joint internal energy',
+        'eroded_hourglass_energy': 'Eroded hourglass energy',
+        'nzc': 'Number of zones in contact',
+        'added_mass': 'Added mass',
+        'resultant_global_velocity': 'Resultant Global velocity',
+        'ts_part': 'Part controlling the time step'
+    }
+}
+Matsum : {
+    "description": 'Material energies',
+    "filename": 'matsum',
+    "measurements": {
+        'x_momentum': 'X momentum',
+        'y_rbvelocity': 'Y rigid-body velocity',
+        'z_rbvelocity': 'Z rigid-body velocity',
+        'internal_energy': 'Internal energy',
+        'kinetic_energy': 'Kinetic energy',
+        'max_shell_mass': 'Max shell mass',
+        'y_momentum': 'Y momentum',
+        'mass': 'Mass',
+        'eroded_kinetic_energy': 'Eroded kinetic energy',
+        'brick_id': 'Controlling brick identifier',
+        'max_brick_mass': 'Max brick mass',
+        'shell_id': 'Controlling shell identifier',
+        'eroded_internal_energy': 'Eroded internal energy',
+        'z_momentum': 'Z momentum',
+        'hourglass_energy': 'Hourglass energy',
+        'eroded_hourglass_energy': 'Eroded hourglass energy',
+        'x_rbvelocity': 'X rigid-body velocity',
+        'energy_ratio': 'Energy ratio',
+        'eroded_energy_ratio': 'Eroded energy ratio',
+        'x_rbacceleration': 'X rigid-body acceleration',
+        'y_acceleration': 'Y acceleration',
+        'z_acceleration': 'Z acceleration',
+        'x_rbdisplacement': 'X rigid-body displacement',
+        'y_rbdisplacement': 'Y rigid-body displacement',
+        'z_rbdisplacement': 'Z rigid-body displacement',
+        'resultant_displacement': 'Resultant displacement',
+        'resultant_velocity': 'Resultant velocity',
+        'resultant_acceleration': 'Resultant acceleration',
+        'resultant_momentum': 'Resultant momentum',
+        'x_acceleration': 'X acceleration',
+        'y_acceleration': 'Y acceleration',
+        'z_acceleration': 'Z acceleration'
+    }
+}
+RigidBody : {
+    "description": 'Rigid body data',
+    "filename": 'rbdout',
+    "measurements": {
+        'local_ax': 'Local ax',
+        'local_ay': 'Local ay',
+        'local_az': 'Local az',
+        'local_dx': 'Local dx',
+        'local_dy': 'Local dy',
+        'local_dz': 'Local dz',
+        'local_vx': 'Local vx',
+        'local_vy': 'Local vy',
+        'local_vz': 'Local vz',
+        'local_rax': 'Local rax',
+        'local_ray': 'Local ray',
+        'local_raz': 'Local raz',
+        'local_rdx': 'Local rdx',
+        'local_rdy': 'Local rdy',
+        'local_rdz': 'Local rdz',
+        'local_rvx': 'Local rvx',
+        'local_rvy': 'Local rvy',
+        'local_rvz': 'Local rvz',
+        'global_x': 'Global X',
+        'global_y': 'Global Y',
+        'global_z': 'Global Z',
+        'global_dx': 'Global dx',
+        'global_dy': 'Global dy',
+        'global_dz': 'Global dz',
+        'global_ax': 'Global ax',
+        'global_ay': 'Global ay',
+        'global_az': 'Global az',
+        'global_vx': 'Global vx',
+        'global_vy': 'Global vy',
+        'global_vz': 'Global vz',
+        'global_rax': 'Global rax',
+        'global_ray': 'Global ray',
+        'global_raz': 'Global raz',
+        'global_rdx': 'Global rdx',
+        'global_rdy': 'Global rdy',
+        'global_rdz': 'Global rdz',
+        'global_rvx': 'Global rvx',
+        'global_rvy': 'Global rvy',
+        'global_rvz': 'Global rvz',
+        'dircos_11': 'Direction cosine 1,1',
+        'dircos_12': 'Direction cosine 1,2',
+        'dircos_13': 'Direction cosine 1,3',
+        'dircos_21': 'Direction cosine 2,1',
+        'dircos_22': 'Direction cosine 2,2',
+        'dircos_23': 'Direction cosine 2,3',
+        'dircos_31': 'Direction cosine 3,1',
+        'dircos_32': 'Direction cosine 3,2',
+        'dircos_33': 'Direction cosine 3,3'
+    }
+}
+BoundaryCondition : {
+    "description": 'Boundary conditions',
+    "filename": 'bndout',
+    "measurements": {
+        'energy': 'Energy',
+        'y_force': 'Y force',
+        'x_force': 'X force',
+        'xmoment': 'Xmoment',
+        'ymoment': 'Ymoment',
+        'zmoment': 'Zmoment',
+        'z_force': 'Z force',
+        'etotal': 'Etotal',
+        'x_total': 'X total',
+        'y_total': 'Y total',
+        'z_total': 'Z total'
+    }
+}
+Nodout : {
+    "description": 'Nodal point data',
+    "filename": 'nodout',
+    "measurements": {
+        'rx_velocity': 'Rotational X velocity',
+        'ry_velocity': 'Rotational Y velocity',
+        'rz_velocity': 'Rotational Z velocity',
+        'rx_displacement': 'Rotational X displacement',
+        'ry_displacement': 'Rotational Y displacement',
+        'rz_displacement': 'Rotational Z displacement',
+        'rx_acceleration': 'Rotational X acceleration',
+        'ry_acceleration': 'Rotational Y acceleration',
+        'rz_acceleration': 'Rotational Z acceleration',
+        'x_coordinate': 'X coordinate',
+        'y_coordinate': 'Y coordinate',
+        'z_coordinate': 'Z coordinate',
+        'x_displacement': 'X displacement',
+        'y_displacement': 'Y displacement',
+        'z_displacement': 'Z displacement',
+        'x_velocity': 'X velocity',
+        'y_velocity': 'Y velocity',
+        'z_velocity': 'Z velocity',
+        'x_acceleration': 'X acceleration',
+        'y_acceleration': 'Y acceleration',
+        'z_acceleration': 'Z acceleration',
+        'resultant_rotation': 'Resultant rotation',
+        'resultant_angular_velocity': 'Resultant angular velocity',
+        'resultant_angular_acceleration': 'Resultant angular acceleration',
+        'resultant_displacement': 'Resultant displacement',
+        'resultant_velocity': 'Resultant velocity',
+        'resultant_acceleration': 'Resultant acceleration'
+    }
+}
+JointForc : {
+    "description": 'Joint forces',
+    "filename": 'jntforc',
+    "measurements": {
+        'energy': 'Energy',
+        'resultant_moment': 'Resultant moment',
+        'resultant_force': 'Resultant force',
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'x_moment': 'X moment',
+        'y_moment': 'Y moment',
+        'z_moment': 'Z moment'
+    }
+}
+JointType : {
+    "description": 'Joint type data',
+    "filename": 'jntforc',
+    "measurements": {
+        'alpha_moment_stiffness': 'Alpha moment stiffness',
+        'd(gamma)_dt': 'Gamma angular rate',
+        'joint_extra2': 'Additional joint output',
+        'alpha_degrees': 'Alpha degrees',
+        'alpha_moment_total': 'Alpha moment total',
+        'gamma_degrees': 'Gamma degrees',
+        'd(alpha)_dt': 'Alpha angular rate',
+        'beta_degrees': 'Beta degrees',
+        'alpha_moment_damping': 'Alpha moment damping',
+        'beta_moment_total': 'Beta moment total',
+        'gamma_scale_factor': 'Gamma scale factor',
+        'beta_moment_damping': 'Beta moment damping',
+        'd(beta)_dt': 'Beta angular rate',
+        'beta_moment_stiffness': 'Beta moment stiffness'
+    }
+}
+RCForc : {
+    "description": 'Resultant interface forces',
+    "filename": 'rcforc',
+    "measurements": {
+        'x_moment': 'X moment',
+        'y_moment': 'Y moment',
+        'z_moment': 'Z moment',
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'tie_count': 'Number of tied contacts',
+        'mass': 'Mass',
+        'tie_area': 'Tied contact area',
+        'resultant_force': 'Resultant force'
+    }
+}
+SBTout : {
+    "description": 'Seat belt data',
+    "filename": 'sbtout',
+    "measurements": {
+        'belt_length': 'Belt length',
+        'belt_force': 'Belt force'
+    }
+}
+SlipringOut : {
+    "description": 'Slip ring data',
+    "filename": 'slipring',
+    "measurements": {
+        'ring_slip': 'Slip-ring displacement'
+    }
+}
+RetractorOut : {
+    "description": 'Retractor data',
+    "filename": 'retractor',
+    "measurements": {
+        'retractor_pull_out': 'Retractor pull-out displacement',
+        'retractor_force': 'Retractor force'
+    }
+}
+Secforc : {
+    "description": 'Cross-section forces',
+    "filename": 'secforc',
+    "measurements": {
+        'x_force': 'X force',
+        'y_force': 'Y force',
+        'z_force': 'Z force',
+        'x_moment': 'X moment',
+        'y_moment': 'Y moment',
+        'z_moment': 'Z moment',
+        'x_centroid': 'X centroid',
+        'y_centroid': 'Y centroid',
+        'z_centroid': 'Z centroid',
+        'total_force': 'Total force',
+        'total_moment': 'Total moment',
+        'area': 'Area'
+    }
+}
+Sleout : {
+    "description": 'Interface energies',
+    "filename": 'sleout',
+    "measurements": {
+        'total_friction': 'Total friction',
+        'slave': 'Slave contact identifier',
+        'total_master': 'Total master contact contribution',
+        'master': 'Master contact identifier',
+        'cycle': 'Cycle',
+        'friction_energy': 'Friction energy',
+        'time': 'Time',
+        'total_energy': 'Total energy',
+        'total_slave': 'Total slave contact contribution'
+    }
+}

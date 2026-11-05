@@ -90,10 +90,10 @@ def read_csv_data(
 def find_measurement_pairs(signal_data: SignalData) -> List[Tuple[int, int]]:
     """Return available time/value pairs without requiring them.
 
-    Signal CSVs contain one ``time`` column followed by each measured value.
-    Other Dynasaur CSVs, such as scalar criteria output, have no time column
-    and are valid inputs for other dashboard components. They therefore
-    produce an empty list instead of raising an error.
+    Dynasaur signal CSVs contain repeated ``time,value`` column pairs. Other
+    Dynasaur CSVs, such as scalar criteria output, have no time column and are
+    valid inputs for other dashboard components; they therefore produce an
+    empty list.
     """
     return [
         (index, index + 1)

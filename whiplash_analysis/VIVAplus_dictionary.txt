@@ -1,0 +1,2041 @@
+{
+  "ligaments": {
+    "NE-ligament-C1-C2-AAAM-L": {
+      "part_id": 200720,
+      "limits": {
+        "lower": 53,
+        "upper": 53
+      }
+    },
+    "NE-ligament-C1-C2-ALL-L": 200710,
+    "NE-ligament-C1-C2-IL-Cruciform-L": 200740,
+    "NE-ligament-C1-C2-PAAM-L": {
+      "part_id": 200760,
+      "limits": {
+        "lower": 49,
+        "upper": 49
+      }
+    },
+    "NE-ligament-C1-C2-Transverse-Center-L": 200750,
+    "NE-ligament-OC-C1-AAOM-C": {
+      "part_id": 200510,
+      "limits": {
+        "lower": 36,
+        "upper": 56
+      }
+    },
+    "NE-ligament-OC-C1-Alar-C": 200550,
+    "NE-ligament-OC-C1-Apical-C": 200520,
+    "NE-ligament-OC-C1-Cruciform-C": 200530,
+    "NE-ligament-OC-C1-PAOM-C": {
+      "part_id": 200570,
+      "limits": {
+        "lower": 39,
+        "upper": 65
+      }
+    },
+    "NE-ligament-OC-C1-Tectoria-C": 200540,
+    "NE-ligament-OC-C1-Transverse-C": 200580,
+    "NE-ligaments-C2-C3-ALL-M": {
+      "part_id": 201521,
+      "limits": {
+        "lower": 25.8,
+        "upper": 35.8
+      }
+    },
+    "NE-ligaments-C2-C3-ISL-M": {
+      "part_id": 201525,
+      "limits": {
+        "lower": 59.7,
+        "upper": 72.1
+      }
+    },
+    "NE-ligaments-C2-C3-LF-M": {
+      "part_id": 201524,
+      "limits": {
+        "lower": 64.1,
+        "upper": 89.9
+      }
+    },
+    "NE-ligaments-C2-C3-PLL-M": {
+      "part_id": 201522,
+      "limits": {
+        "lower": 15,
+        "upper": 21.4
+      }
+    },
+    "NE-ligaments-C2-C3-CL-M": {
+      "part_id": 201523,
+      "limits": {
+        "lower": 120,
+        "upper": 176.5
+      }
+    },
+    "NE-ligaments-C3-C4-ALL-M": {
+      "part_id": 201531,
+      "limits": {
+        "lower": 25.8,
+        "upper": 35.8
+      }
+    },
+    "NE-ligaments-C3-C4-ISL-M": {
+      "part_id": 201535,
+      "limits": {
+        "lower": 59.7,
+        "upper": 72.1
+      }
+    },
+    "NE-ligaments-C3-C4-LF-M": {
+      "part_id": 201534,
+      "limits": {
+        "lower": 64.1,
+        "upper": 89.9
+      }
+    },
+    "NE-ligaments-C3-C4-PLL-M": {
+      "part_id": 201532,
+      "limits": {
+        "lower": 15,
+        "upper": 21.4
+      }
+    },
+    "NE-ligaments-C3-C4-CL-M": {
+      "part_id": 201533,
+      "limits": {
+        "lower": 120,
+        "upper": 176.5
+      }
+    },
+    "NE-ligaments-C4-C5-ALL-M": {
+      "part_id": 201541,
+      "limits": {
+        "lower": 25.8,
+        "upper": 35.8
+      }
+    },
+    "NE-ligaments-C4-C5-ISL-M": {
+      "part_id": 201545,
+      "limits": {
+        "lower": 59.7,
+        "upper": 72.1
+      }
+    },
+    "NE-ligaments-C4-C5-LF-M": {
+      "part_id": 201544,
+      "limits": {
+        "lower": 64.1,
+        "upper": 89.9
+      }
+    },
+    "NE-ligaments-C4-C5-PLL-M": {
+      "part_id": 201542,
+      "limits": {
+        "lower": 15,
+        "upper": 21.4
+      }
+    },
+    "NE-ligaments-C4-C5-CL-M": {
+      "part_id": 201543,
+      "limits": {
+        "lower": 120,
+        "upper": 176.5
+      }
+    },
+    "NE-ligaments-C5-C6-ALL-M": {
+      "part_id": 201551,
+      "limits": {
+        "lower": 29.54,
+        "upper": 41.26
+      }
+    },
+    "NE-ligaments-C5-C6-ISL-M": {
+      "part_id": 201555,
+      "limits": {
+        "lower": 54.3,
+        "upper": 81.9
+      }
+    },
+    "NE-ligaments-C5-C6-LF-M": {
+      "part_id": 201554,
+      "limits": {
+        "lower": 75.3,
+        "upper": 101.5
+      }
+    },
+    "NE-ligaments-C5-C6-PLL-M": {
+      "part_id": 201552,
+      "limits": {
+        "lower": 25.33,
+        "upper": 42.87
+      }
+    },
+    "NE-ligaments-C5-C6-CL-M": {
+      "part_id": 201553,
+      "limits": {
+        "lower": 96.4,
+        "upper": 135.6
+      }
+    },
+    "NE-ligaments-C6-C7-ALL-M": {
+      "part_id": 201561,
+      "limits": {
+        "lower": 29.54,
+        "upper": 41.26
+      }
+    },
+    "NE-ligaments-C6-C7-ISL-M": {
+      "part_id": 201565,
+      "limits": {
+        "lower": 54.3,
+        "upper": 81.9
+      }
+    },
+    "NE-ligaments-C6-C7-LF-M": {
+      "part_id": 201564,
+      "limits": {
+        "lower": 75.3,
+        "upper": 101.5
+      }
+    },
+    "NE-ligaments-C6-C7-PLL-M": {
+      "part_id": 201562,
+      "limits": {
+        "lower": 25.33,
+        "upper": 42.87
+      }
+    },
+    "NE-ligaments-C6-C7-CL-M": {
+      "part_id": 201563,
+      "limits": {
+        "lower": 96.4,
+        "upper": 135.6
+      }
+    },
+    "NE-ligaments-C7-T1-ALL-M": {
+      "part_id": 201571,
+      "limits": {
+        "lower": 29.54,
+        "upper": 41.26
+      }
+    },
+    "NE-ligaments-C7-T1-ISL-M": {
+      "part_id": 201575,
+      "limits": {
+        "lower": 54.3,
+        "upper": 81.9
+      }
+    },
+    "NE-ligaments-C7-T1-LF-M": {
+      "part_id": 201574,
+      "limits": {
+        "lower": 75.3,
+        "upper": 101.5
+      }
+    },
+    "NE-ligaments-C7-T1-PLL-M": {
+      "part_id": 201572,
+      "limits": {
+        "lower": 25.33,
+        "upper": 42.87
+      }
+    },
+    "NE-ligaments-C7-T1-CL-M": {
+      "part_id": 201573,
+      "limits": {
+        "lower": 96.4,
+        "upper": 135.6
+      }
+    },
+    "NE_L_Stylohyoid_Ligament": 200610
+  },
+  "facet joints": {
+    "NE-Vertebra-Articular-Process-C1-Inferior-Cartilage": {
+      "part_id": 201113,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C1-Superior-Cartilage": {
+      "part_id": 201111,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C2-Inferior-Cartilage": {
+      "part_id": 201123,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C2-Superior-Cartilage": {
+      "part_id": 201121,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C3-Inferior-Cartilage": {
+      "part_id": 201133,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C3-Superior-Cartilage": {
+      "part_id": 201131,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C4-Inferior-Cartilage": {
+      "part_id": 201143,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C4-Superior-Cartilage": {
+      "part_id": 201141,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C5-Inferior-Cartilage": {
+      "part_id": 201153,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C5-Superior-Cartilage": {
+      "part_id": 201151,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C6-Inferior-Cartilage": {
+      "part_id": 201163,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C6-Superior-Cartilage": {
+      "part_id": 201161,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C7-Inferior-Cartilage": {
+      "part_id": 201173,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "NE-Vertebra-Articular-Process-C7-Superior-Cartilage": {
+      "part_id": 201171,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    },
+    "TX-Vertebra-Articular-Process-T1-Superior-Cartilage": {
+      "part_id": 401211,
+      "limits": {
+        "load": 9000,
+        "energy": 10.2
+      }
+    }
+  },
+  "articular processes": {
+    "C1C2": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C1-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C2-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C2C3": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C2-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C3-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C3C4": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C3-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C4-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C4C5": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C4-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C5-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C5C6": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C5-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C6-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C6C7": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C6-Inferior-Cartilage",
+        "NE-Vertebra-Articular-Process-C7-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    },
+    "C7T1": {
+      "parts": [
+        "NE-Vertebra-Articular-Process-C7-Inferior-Cartilage",
+        "TX-Vertebra-Articular-Process-T1-Superior-Cartilage"
+      ],
+      "limits": {"energy": 10.2}
+    }
+  },
+  "intervertebral discs": {
+    "NE-IVD-Annulus-fiber-C2-C3-1a-M": {
+      "part_id": 202121,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C2-C3-1b-M": {
+      "part_id": 202122,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C2-C3-2a-M": {
+      "part_id": 202123,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C2-C3-2b-M": {
+      "part_id": 202124,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C2-C3-3a-M": {
+      "part_id": 202125,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C2-C3-3b-M": {
+      "part_id": 202126,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-1a-M": {
+      "part_id": 202131,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-1b-M": {
+      "part_id": 202132,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-2a-M": {
+      "part_id": 202133,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-2b-M": {
+      "part_id": 202134,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-3a-M": {
+      "part_id": 202135,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C3-C4-3b-M": {
+      "part_id": 202136,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-1a-M": {
+      "part_id": 202141,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-1b-M": {
+      "part_id": 202142,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-2a-M": {
+      "part_id": 202143,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-2b-M": {
+      "part_id": 202144,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-3a-M": {
+      "part_id": 202145,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C4-C5-3b-M": {
+      "part_id": 202146,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-1a-M": {
+      "part_id": 202151,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-1b-M": {
+      "part_id": 202152,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-2a-M": {
+      "part_id": 202153,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-2b-M": {
+      "part_id": 202154,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-3a-M": {
+      "part_id": 202155,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C5-C6-3b-M": {
+      "part_id": 202156,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-1a-M": {
+      "part_id": 202161,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-1b-M": {
+      "part_id": 202162,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-2a-M": {
+      "part_id": 202163,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-2b-M": {
+      "part_id": 202164,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-3a-M": {
+      "part_id": 202165,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C6-C7-3b-M": {
+      "part_id": 202166,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-1a-M": {
+      "part_id": 202171,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-1b-M": {
+      "part_id": 202172,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-2a-M": {
+      "part_id": 202173,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-2b-M": {
+      "part_id": 202174,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-3a-M": {
+      "part_id": 202175,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-Annulus-fiber-C7-T1-3b-M": {
+      "part_id": 202176,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-C2-C3-Annulus-ground-M": {
+      "part_id": 202021,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-C2-C3-Nucleus-M": {
+      "part_id": 202022,
+      "limits": {
+        "energy": 3.7
+      }
+    },
+    "NE-IVD-C3-C4-Annulus-ground-M": {
+      "part_id": 202031,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-C3-C4-Nucleus-M": {
+      "part_id": 202032,
+      "limits": {
+        "energy": 4.4
+      }
+    },
+    "NE-IVD-C4-C5-Annulus-ground-M": {
+      "part_id": 202041,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-C4-C5-Nucleus-M": {
+      "part_id": 202042,
+      "limits": {
+        "energy": 5.5
+      }
+    },
+    "NE-IVD-C5-C6-Annulus-ground-M": {
+      "part_id": 202051,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-C5-C6-Nucleus-M": {
+      "part_id": 202052,
+      "limits": {
+        "energy": 2.6
+      }
+    },
+    "NE-IVD-C6-C7-Annulus-ground-M": {
+      "part_id": 202061,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-C6-C7-Nucleus-M": {
+      "part_id": 202062,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-C7-T1-Annulus-ground-M": {
+      "part_id": 202071,
+      "limits": {
+        "energy": 3.3
+      }
+    },
+    "NE-IVD-C7-T1-Nucleus-M": {
+      "part_id": 202072,
+      "limits": {
+        "energy": 3.3
+      }
+    }
+  },
+  "intervertebral disc bodies": {
+    "IVDC2C3": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C2-C3-1a-M",
+        "NE-IVD-Annulus-fiber-C2-C3-1b-M",
+        "NE-IVD-Annulus-fiber-C2-C3-2a-M",
+        "NE-IVD-Annulus-fiber-C2-C3-2b-M",
+        "NE-IVD-Annulus-fiber-C2-C3-3a-M",
+        "NE-IVD-Annulus-fiber-C2-C3-3b-M",
+        "NE-IVD-C2-C3-Annulus-ground-M",
+        "NE-IVD-C2-C3-Nucleus-M"
+      ],
+      "limits": {"energy": 3.7}
+    },
+    "IVDC3C4": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C3-C4-1a-M",
+        "NE-IVD-Annulus-fiber-C3-C4-1b-M",
+        "NE-IVD-Annulus-fiber-C3-C4-2a-M",
+        "NE-IVD-Annulus-fiber-C3-C4-2b-M",
+        "NE-IVD-Annulus-fiber-C3-C4-3a-M",
+        "NE-IVD-Annulus-fiber-C3-C4-3b-M",
+        "NE-IVD-C3-C4-Annulus-ground-M",
+        "NE-IVD-C3-C4-Nucleus-M"
+      ],
+      "limits": {"energy": 4.4}
+    },
+    "IVDC4C5": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C4-C5-1a-M",
+        "NE-IVD-Annulus-fiber-C4-C5-1b-M",
+        "NE-IVD-Annulus-fiber-C4-C5-2a-M",
+        "NE-IVD-Annulus-fiber-C4-C5-2b-M",
+        "NE-IVD-Annulus-fiber-C4-C5-3a-M",
+        "NE-IVD-Annulus-fiber-C4-C5-3b-M",
+        "NE-IVD-C4-C5-Annulus-ground-M",
+        "NE-IVD-C4-C5-Nucleus-M"
+      ],
+      "limits": {"energy": 5.5}
+    },
+    "IVDC5C6": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C5-C6-1a-M",
+        "NE-IVD-Annulus-fiber-C5-C6-1b-M",
+        "NE-IVD-Annulus-fiber-C5-C6-2a-M",
+        "NE-IVD-Annulus-fiber-C5-C6-2b-M",
+        "NE-IVD-Annulus-fiber-C5-C6-3a-M",
+        "NE-IVD-Annulus-fiber-C5-C6-3b-M",
+        "NE-IVD-C5-C6-Annulus-ground-M",
+        "NE-IVD-C5-C6-Nucleus-M"
+      ],
+      "limits": {"energy": 2.6}
+    },
+    "IVDC6C7": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C6-C7-1a-M",
+        "NE-IVD-Annulus-fiber-C6-C7-1b-M",
+        "NE-IVD-Annulus-fiber-C6-C7-2a-M",
+        "NE-IVD-Annulus-fiber-C6-C7-2b-M",
+        "NE-IVD-Annulus-fiber-C6-C7-3a-M",
+        "NE-IVD-Annulus-fiber-C6-C7-3b-M",
+        "NE-IVD-C6-C7-Annulus-ground-M",
+        "NE-IVD-C6-C7-Nucleus-M"
+      ],
+      "limits": {"energy": 3.3}
+    },
+    "IVDC7T1": {
+      "parts": [
+        "NE-IVD-Annulus-fiber-C7-T1-1a-M",
+        "NE-IVD-Annulus-fiber-C7-T1-1b-M",
+        "NE-IVD-Annulus-fiber-C7-T1-2a-M",
+        "NE-IVD-Annulus-fiber-C7-T1-2b-M",
+        "NE-IVD-Annulus-fiber-C7-T1-3a-M",
+        "NE-IVD-Annulus-fiber-C7-T1-3b-M",
+        "NE-IVD-C7-T1-Annulus-ground-M",
+        "NE-IVD-C7-T1-Nucleus-M"
+      ],
+      "limits": {"energy": 3.3}
+    }
+  },
+  "muscles": {
+    "NE-Muscle-Iliocostalis-Cervicis-C4-R3-L": {
+      "part_id": 206910,
+      "section_id": 206910,
+      "area": 14.2
+    },
+    "NE-Muscle-Iliocostalis-Cervicis-C4-R3-R": {
+      "part_id": 256910,
+      "section_id": 256910,
+      "area": 14.2
+    },
+    "NE-Muscle-Iliocostalis-Cervicis-C5-R3-L": {
+      "part_id": 206920,
+      "section_id": 206920,
+      "area": 14.2
+    },
+    "NE-Muscle-Iliocostalis-Cervicis-C5-R3-R": {
+      "part_id": 256920,
+      "section_id": 256920,
+      "area": 14.2
+    },
+    "NE-Muscle-Iliocostalis-Cervicis-C6-R3-L": {
+      "part_id": 206930,
+      "section_id": 206930,
+      "area": 14.2
+    },
+    "NE-Muscle-Iliocostalis-Cervicis-C6-R3-R": {
+      "part_id": 256930,
+      "section_id": 256930,
+      "area": 14.2
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C2-C3-L": {
+      "part_id": 206700,
+      "section_id": 206700,
+      "area": 9.8
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C2-C3-R": {
+      "part_id": 256700,
+      "section_id": 256700,
+      "area": 9.8
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C3-C4-L": {
+      "part_id": 206710,
+      "section_id": 206710,
+      "area": 17.1
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C3-C4-R": {
+      "part_id": 256710,
+      "section_id": 256710,
+      "area": 17.1
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C4-C5-L": {
+      "part_id": 206720,
+      "section_id": 206720,
+      "area": 16.2
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C4-C5-R": {
+      "part_id": 256720,
+      "section_id": 256720,
+      "area": 16.2
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C5-C6-L": {
+      "part_id": 206730,
+      "section_id": 206730,
+      "area": 25.6
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C5-C6-R": {
+      "part_id": 256730,
+      "section_id": 256730,
+      "area": 25.6
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C6-C7-L": {
+      "part_id": 206740,
+      "section_id": 206740,
+      "area": 12.2
+    },
+    "NE-Muscle-Interspinalis-Cervicis-C6-C7-R": {
+      "part_id": 256740,
+      "section_id": 256740,
+      "area": 12.2
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C1-C2-L": {
+      "part_id": 205510,
+      "section_id": 205510,
+      "area": 8.1
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C1-C2-R": {
+      "part_id": 255510,
+      "section_id": 255510,
+      "area": 8.1
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C2-C3-L": {
+      "part_id": 205520,
+      "section_id": 205520,
+      "area": 22.2
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C2-C3-R": {
+      "part_id": 255520,
+      "section_id": 255520,
+      "area": 22.2
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C3-C4-L": {
+      "part_id": 205530,
+      "section_id": 205530,
+      "area": 22.0
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C3-C4-R": {
+      "part_id": 255530,
+      "section_id": 255530,
+      "area": 22.0
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C4-C5-L": {
+      "part_id": 205540,
+      "section_id": 205540,
+      "area": 21.5
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C4-C5-R": {
+      "part_id": 255540,
+      "section_id": 255540,
+      "area": 21.5
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C5-C6-L": {
+      "part_id": 205550,
+      "section_id": 205550,
+      "area": 16.4
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C5-C6-R": {
+      "part_id": 255550,
+      "section_id": 255550,
+      "area": 16.4
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C6-C7-L": {
+      "part_id": 205560,
+      "section_id": 205560,
+      "area": 15.1
+    },
+    "NE-Muscle-Intertransversarii-Ant-Cervicis-C6-C7-R": {
+      "part_id": 255560,
+      "section_id": 255560,
+      "area": 15.1
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C1-C2-L": {
+      "part_id": 205610,
+      "section_id": 205610,
+      "area": 16.1
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C1-C2-R": {
+      "part_id": 255610,
+      "section_id": 255610,
+      "area": 16.1
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C2-C3-L": {
+      "part_id": 205620,
+      "section_id": 205620,
+      "area": 17.1
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C2-C3-R": {
+      "part_id": 255620,
+      "section_id": 255620,
+      "area": 17.1
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C3-C4-L": {
+      "part_id": 205630,
+      "section_id": 205630,
+      "area": 15.2
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C3-C4-R": {
+      "part_id": 255630,
+      "section_id": 255630,
+      "area": 15.2
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C4-C5-L": {
+      "part_id": 205640,
+      "section_id": 205640,
+      "area": 15.5
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C4-C5-R": {
+      "part_id": 255640,
+      "section_id": 255640,
+      "area": 15.5
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C5-C6-L": {
+      "part_id": 205650,
+      "section_id": 205650,
+      "area": 19.0
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C5-C6-R": {
+      "part_id": 255650,
+      "section_id": 255650,
+      "area": 19.0
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C6-C7-L": {
+      "part_id": 205660,
+      "section_id": 205660,
+      "area": 23.5
+    },
+    "NE-Muscle-Intertransversarii-Post-Cervicis-C6-C7-R": {
+      "part_id": 255660,
+      "section_id": 255660,
+      "area": 23.5
+    },
+    "NE-Muscle-Levator-Scapulae-C1-Scap-L": {
+      "part_id": 206510,
+      "section_id": 206510,
+      "area": 101.8
+    },
+    "NE-Muscle-Levator-Scapulae-C1-Scap-R": {
+      "part_id": 256510,
+      "section_id": 256510,
+      "area": 101.8
+    },
+    "NE-Muscle-Levator-Scapulae-C2-Scap-L": {
+      "part_id": 206520,
+      "section_id": 206520,
+      "area": 59.8
+    },
+    "NE-Muscle-Levator-Scapulae-C2-Scap-R": {
+      "part_id": 256520,
+      "section_id": 256520,
+      "area": 59.8
+    },
+    "NE-Muscle-Levator-Scapulae-C3-Scap-L": {
+      "part_id": 206530,
+      "section_id": 206530,
+      "area": 43.1
+    },
+    "NE-Muscle-Levator-Scapulae-C3-Scap-R": {
+      "part_id": 256530,
+      "section_id": 256530,
+      "area": 43.1
+    },
+    "NE-Muscle-Levator-Scapulae-C4-Scap-L": {
+      "part_id": 206540,
+      "section_id": 206540,
+      "area": 39.6
+    },
+    "NE-Muscle-Levator-Scapulae-C4-Scap-R": {
+      "part_id": 256540,
+      "section_id": 256540,
+      "area": 39.6
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C4-L": {
+      "part_id": 205710,
+      "section_id": 205710,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C4-R": {
+      "part_id": 255710,
+      "section_id": 255710,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C5-L": {
+      "part_id": 205720,
+      "section_id": 205720,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C5-R": {
+      "part_id": 255720,
+      "section_id": 255720,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C6-L": {
+      "part_id": 205730,
+      "section_id": 205730,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C6-R": {
+      "part_id": 255730,
+      "section_id": 255730,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C7-L": {
+      "part_id": 205740,
+      "section_id": 205740,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-C7-R": {
+      "part_id": 255740,
+      "section_id": 255740,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-T1-L": {
+      "part_id": 205750,
+      "section_id": 205750,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-T1-R": {
+      "part_id": 255750,
+      "section_id": 255750,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-T2-L": {
+      "part_id": 205760,
+      "section_id": 205760,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Capitis-S-T2-R": {
+      "part_id": 255760,
+      "section_id": 255760,
+      "area": 12.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C1-T2-L": {
+      "part_id": 206410,
+      "section_id": 206410,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C1-T2-R": {
+      "part_id": 256410,
+      "section_id": 256410,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C2-R3-L": {
+      "part_id": 206470,
+      "section_id": 206470,
+      "area": 32.8
+    },
+    "NE-Muscle-Longissimus-Cervicis-C2-R3-R": {
+      "part_id": 256470,
+      "section_id": 256470,
+      "area": 32.8
+    },
+    "NE-Muscle-Longissimus-Cervicis-C2-T2-L": {
+      "part_id": 206420,
+      "section_id": 206420,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C2-T2-R": {
+      "part_id": 256420,
+      "section_id": 256420,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C3-R3-L": {
+      "part_id": 206480,
+      "section_id": 206480,
+      "area": 32.8
+    },
+    "NE-Muscle-Longissimus-Cervicis-C3-R3-R": {
+      "part_id": 256480,
+      "section_id": 256480,
+      "area": 32.8
+    },
+    "NE-Muscle-Longissimus-Cervicis-C3-T2-L": {
+      "part_id": 206430,
+      "section_id": 206430,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C3-T2-R": {
+      "part_id": 256430,
+      "section_id": 256430,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C4-T2-L": {
+      "part_id": 206440,
+      "section_id": 206440,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C4-T2-R": {
+      "part_id": 256440,
+      "section_id": 256440,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C5-T2-L": {
+      "part_id": 206450,
+      "section_id": 206450,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C5-T2-R": {
+      "part_id": 256450,
+      "section_id": 256450,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C6-T2-L": {
+      "part_id": 206460,
+      "section_id": 206460,
+      "area": 15.5
+    },
+    "NE-Muscle-Longissimus-Cervicis-C6-T2-R": {
+      "part_id": 256460,
+      "section_id": 256460,
+      "area": 15.5
+    },
+    "NE-Muscle-Longus-Capitis-S-C3-L": {
+      "part_id": 205810,
+      "section_id": 205810,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C3-R": {
+      "part_id": 255810,
+      "section_id": 255810,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C4-L": {
+      "part_id": 205820,
+      "section_id": 205820,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C4-R": {
+      "part_id": 255820,
+      "section_id": 255820,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C5-L": {
+      "part_id": 205830,
+      "section_id": 205830,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C5-R": {
+      "part_id": 255830,
+      "section_id": 255830,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C6-L": {
+      "part_id": 205840,
+      "section_id": 205840,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Capitis-S-C6-R": {
+      "part_id": 255840,
+      "section_id": 255840,
+      "area": 22.3
+    },
+    "NE-Muscle-Longus-Colli-C1-C4-L": {
+      "part_id": 205410,
+      "section_id": 205410,
+      "area": 12.3
+    },
+    "NE-Muscle-Longus-Colli-C1-C4-R": {
+      "part_id": 255410,
+      "section_id": 255410,
+      "area": 12.3
+    },
+    "NE-Muscle-Longus-Colli-C1-T1-L": {
+      "part_id": 205420,
+      "section_id": 205420,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C1-T1-R": {
+      "part_id": 255420,
+      "section_id": 255420,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C2-C4-L": {
+      "part_id": 205430,
+      "section_id": 205430,
+      "area": 5.3
+    },
+    "NE-Muscle-Longus-Colli-C2-C4-R": {
+      "part_id": 255430,
+      "section_id": 255430,
+      "area": 5.3
+    },
+    "NE-Muscle-Longus-Colli-C2-T1-L": {
+      "part_id": 205440,
+      "section_id": 205440,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C2-T1-R": {
+      "part_id": 255440,
+      "section_id": 255440,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C3-T1-L": {
+      "part_id": 205450,
+      "section_id": 205450,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C3-T1-R": {
+      "part_id": 255450,
+      "section_id": 255450,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C4-C7-L": {
+      "part_id": 205460,
+      "section_id": 205460,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C4-C7-R": {
+      "part_id": 255460,
+      "section_id": 255460,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C5-C7-L": {
+      "part_id": 205470,
+      "section_id": 205470,
+      "area": 15.3
+    },
+    "NE-Muscle-Longus-Colli-C5-C7-R": {
+      "part_id": 255470,
+      "section_id": 255470,
+      "area": 15.3
+    },
+    "NE-Muscle-Multifidus-Cervicis-C2-C5-L": {
+      "part_id": 206800,
+      "section_id": 206800,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C2-C5-R": {
+      "part_id": 256800,
+      "section_id": 256800,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C2-C6-L": {
+      "part_id": 206810,
+      "section_id": 206810,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C2-C6-R": {
+      "part_id": 256810,
+      "section_id": 256810,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C3-C6-L": {
+      "part_id": 206820,
+      "section_id": 206820,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C3-C6-R": {
+      "part_id": 256820,
+      "section_id": 256820,
+      "area": 36.1
+    },
+    "NE-Muscle-Multifidus-Cervicis-C3-C7-L": {
+      "part_id": 206830,
+      "section_id": 206830,
+      "area": 56.0
+    },
+    "NE-Muscle-Multifidus-Cervicis-C3-C7-R": {
+      "part_id": 256830,
+      "section_id": 256830,
+      "area": 56.0
+    },
+    "NE-Muscle-Multifidus-Cervicis-C4-T1-L": {
+      "part_id": 206840,
+      "section_id": 206840,
+      "area": 58.3
+    },
+    "NE-Muscle-Multifidus-Cervicis-C4-T1-R": {
+      "part_id": 256840,
+      "section_id": 256840,
+      "area": 58.3
+    },
+    "NE-Muscle-Multifidus-Cervicis-C5-T1-L": {
+      "part_id": 206850,
+      "section_id": 206850,
+      "area": 37.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C5-T1-R": {
+      "part_id": 256850,
+      "section_id": 256850,
+      "area": 37.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C6-T2-L": {
+      "part_id": 206860,
+      "section_id": 206860,
+      "area": 69.4
+    },
+    "NE-Muscle-Multifidus-Cervicis-C6-T2-R": {
+      "part_id": 256860,
+      "section_id": 256860,
+      "area": 69.4
+    },
+    "NE-Muscle-Multifidus-Cervicis-C6-T3-L": {
+      "part_id": 206870,
+      "section_id": 206870,
+      "area": 38.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C6-T3-R": {
+      "part_id": 256870,
+      "section_id": 256870,
+      "area": 38.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C7-T3-L": {
+      "part_id": 206880,
+      "section_id": 206880,
+      "area": 38.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C7-T3-R": {
+      "part_id": 256880,
+      "section_id": 256880,
+      "area": 38.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C7-T4-L": {
+      "part_id": 206890,
+      "section_id": 206890,
+      "area": 34.9
+    },
+    "NE-Muscle-Multifidus-Cervicis-C7-T4-R": {
+      "part_id": 256890,
+      "section_id": 256890,
+      "area": 34.9
+    },
+    "NE-Muscle-Obliquus-Capitis-Inferior-C1-C2-L": {
+      "part_id": 205270,
+      "section_id": 205270,
+      "area": 171.3
+    },
+    "NE-Muscle-Obliquus-Capitis-Inferior-C1-C2-R": {
+      "part_id": 255270,
+      "section_id": 255270,
+      "area": 171.3
+    },
+    "NE-Muscle-Obliquus-Capitis-Superior-S-C1-L": {
+      "part_id": 205260,
+      "section_id": 205260,
+      "area": 92.2
+    },
+    "NE-Muscle-Obliquus-Capitis-Superior-S-C1-R": {
+      "part_id": 255260,
+      "section_id": 255260,
+      "area": 92.2
+    },
+    "NE-Muscle-Omohyoid-Head-Scap-L": {
+      "part_id": 205110,
+      "section_id": 205110,
+      "area": 44.4
+    },
+    "NE-Muscle-Omohyoid-Head-Scap-R": {
+      "part_id": 255110,
+      "section_id": 255110,
+      "area": 44.4
+    },
+    "NE-Muscle-Rectus-Capitis-Ant-S-C1-L": {
+      "part_id": 205210,
+      "section_id": 205210,
+      "area": 8.0
+    },
+    "NE-Muscle-Rectus-Capitis-Ant-S-C1-R": {
+      "part_id": 255210,
+      "section_id": 255210,
+      "area": 8.0
+    },
+    "NE-Muscle-Rectus-Capitis-Lat-S-C1-L": {
+      "part_id": 205220,
+      "section_id": 205220,
+      "area": 78.3
+    },
+    "NE-Muscle-Rectus-Capitis-Lat-S-C1-R": {
+      "part_id": 255220,
+      "section_id": 255220,
+      "area": 78.3
+    },
+    "NE-Muscle-Rectus-Capitis-Post-Maj-S-C2-L": {
+      "part_id": 205230,
+      "section_id": 205230,
+      "area": 54.1
+    },
+    "NE-Muscle-Rectus-Capitis-Post-Maj-S-C2-R": {
+      "part_id": 255230,
+      "section_id": 255230,
+      "area": 54.1
+    },
+    "NE-Muscle-Rectus-Capitis-Post-Min-S-C1-L": {
+      "part_id": 205240,
+      "section_id": 205240,
+      "area": 90.3
+    },
+    "NE-Muscle-Rectus-Capitis-Post-Min-S-C1-R": {
+      "part_id": 255240,
+      "section_id": 255240,
+      "area": 90.3
+    },
+    "NE-Muscle-Rhomboideus-Minor-C6-Scap-L": {
+      "part_id": 206960,
+      "section_id": 206960,
+      "area": 47.8
+    },
+    "NE-Muscle-Rhomboideus-Minor-C6-Scap-R": {
+      "part_id": 256960,
+      "section_id": 256960,
+      "area": 47.8
+    },
+    "NE-Muscle-Rhomboideus-Minor-C7-Scap-L": {
+      "part_id": 206970,
+      "section_id": 206970,
+      "area": 47.8
+    },
+    "NE-Muscle-Rhomboideus-Minor-C7-Scap-R": {
+      "part_id": 256970,
+      "section_id": 256970,
+      "area": 47.8
+    },
+    "NE-Muscle-SCM-S-Clavicle-1-L": {
+      "part_id": 205310,
+      "section_id": 205310,
+      "area": 47.4
+    },
+    "NE-Muscle-SCM-S-Clavicle-1-R": {
+      "part_id": 255310,
+      "section_id": 255310,
+      "area": 47.4
+    },
+    "NE-Muscle-SCM-S-Clavicle-2-L": {
+      "part_id": 205320,
+      "section_id": 205320,
+      "area": 48.9
+    },
+    "NE-Muscle-SCM-S-Clavicle-2-R": {
+      "part_id": 255320,
+      "section_id": 255320,
+      "area": 48.9
+    },
+    "NE-Muscle-SCM-S-Sternum-1-L": {
+      "part_id": 205330,
+      "section_id": 205330,
+      "area": 124.0
+    },
+    "NE-Muscle-SCM-S-Sternum-1-R": {
+      "part_id": 255330,
+      "section_id": 255330,
+      "area": 124.0
+    },
+    "NE-Muscle-SCM-S-Sternum-2-L": {
+      "part_id": 205340,
+      "section_id": 205340,
+      "area": 69.8
+    },
+    "NE-Muscle-SCM-S-Sternum-2-R": {
+      "part_id": 255340,
+      "section_id": 255340,
+      "area": 69.8
+    },
+    "NE-Muscle-Scalenus-Ant-C4-R1-L": {
+      "part_id": 206310,
+      "section_id": 206310,
+      "area": 20.5
+    },
+    "NE-Muscle-Scalenus-Ant-C4-R1-R": {
+      "part_id": 256310,
+      "section_id": 256310,
+      "area": 20.5
+    },
+    "NE-Muscle-Scalenus-Ant-C5-R1-L": {
+      "part_id": 206320,
+      "section_id": 206320,
+      "area": 20.5
+    },
+    "NE-Muscle-Scalenus-Ant-C5-R1-R": {
+      "part_id": 256320,
+      "section_id": 256320,
+      "area": 20.5
+    },
+    "NE-Muscle-Scalenus-Ant-C6-R1-L": {
+      "part_id": 206330,
+      "section_id": 206330,
+      "area": 41.1
+    },
+    "NE-Muscle-Scalenus-Ant-C6-R1-R": {
+      "part_id": 256330,
+      "section_id": 256330,
+      "area": 41.1
+    },
+    "NE-Muscle-Scalenus-Med-C1-R1-L": {
+      "part_id": 206210,
+      "section_id": 206210,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C1-R1-R": {
+      "part_id": 256210,
+      "section_id": 256210,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C2-R1-L": {
+      "part_id": 206220,
+      "section_id": 206220,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C2-R1-R": {
+      "part_id": 256220,
+      "section_id": 256220,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C3-R1-L": {
+      "part_id": 206230,
+      "section_id": 206230,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C3-R1-R": {
+      "part_id": 256230,
+      "section_id": 256230,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C4-R1-L": {
+      "part_id": 206240,
+      "section_id": 206240,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C4-R1-R": {
+      "part_id": 256240,
+      "section_id": 256240,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C5-R1-L": {
+      "part_id": 206250,
+      "section_id": 206250,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C5-R1-R": {
+      "part_id": 256250,
+      "section_id": 256250,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C6-R1-L": {
+      "part_id": 206260,
+      "section_id": 206260,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C6-R1-R": {
+      "part_id": 256260,
+      "section_id": 256260,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C7-R1-L": {
+      "part_id": 206270,
+      "section_id": 206270,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Med-C7-R1-R": {
+      "part_id": 256270,
+      "section_id": 256270,
+      "area": 26.3
+    },
+    "NE-Muscle-Scalenus-Post-C5-R1-L": {
+      "part_id": 206360,
+      "section_id": 206360,
+      "area": 44.6
+    },
+    "NE-Muscle-Scalenus-Post-C5-R1-R": {
+      "part_id": 256360,
+      "section_id": 256360,
+      "area": 44.6
+    },
+    "NE-Muscle-Scalenus-Post-C6-R1-L": {
+      "part_id": 206370,
+      "section_id": 206370,
+      "area": 44.6
+    },
+    "NE-Muscle-Scalenus-Post-C6-R1-R": {
+      "part_id": 256370,
+      "section_id": 256370,
+      "area": 44.6
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C3-L": {
+      "part_id": 206010,
+      "section_id": 206010,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C3-R": {
+      "part_id": 256010,
+      "section_id": 256010,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C4-L": {
+      "part_id": 206020,
+      "section_id": 206020,
+      "area": 45.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C4-R": {
+      "part_id": 256020,
+      "section_id": 256020,
+      "area": 45.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C5-L": {
+      "part_id": 206030,
+      "section_id": 206030,
+      "area": 45.7
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C5-R": {
+      "part_id": 256030,
+      "section_id": 256030,
+      "area": 45.7
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C6-L": {
+      "part_id": 206040,
+      "section_id": 206040,
+      "area": 34.4
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C6-R": {
+      "part_id": 256040,
+      "section_id": 256040,
+      "area": 34.4
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C7-L": {
+      "part_id": 206050,
+      "section_id": 206050,
+      "area": 41.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-C7-R": {
+      "part_id": 256050,
+      "section_id": 256050,
+      "area": 41.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T1-L": {
+      "part_id": 206060,
+      "section_id": 206060,
+      "area": 63.2
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T1-R": {
+      "part_id": 256060,
+      "section_id": 256060,
+      "area": 63.2
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T2-L": {
+      "part_id": 206070,
+      "section_id": 206070,
+      "area": 62.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T2-R": {
+      "part_id": 256070,
+      "section_id": 256070,
+      "area": 62.9
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T3-L": {
+      "part_id": 206080,
+      "section_id": 206080,
+      "area": 51.4
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T3-R": {
+      "part_id": 256080,
+      "section_id": 256080,
+      "area": 51.4
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T4-L": {
+      "part_id": 206090,
+      "section_id": 206090,
+      "area": 46.0
+    },
+    "NE-Muscle-Semispinalis-Capitis-S-T4-R": {
+      "part_id": 256090,
+      "section_id": 256090,
+      "area": 46.0
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C2-T2-L": {
+      "part_id": 206600,
+      "section_id": 206600,
+      "area": 45.0
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C2-T2-R": {
+      "part_id": 256600,
+      "section_id": 256600,
+      "area": 45.0
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C2-T3-L": {
+      "part_id": 206620,
+      "section_id": 206620,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C2-T3-R": {
+      "part_id": 256620,
+      "section_id": 256620,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T2-L": {
+      "part_id": 206610,
+      "section_id": 206610,
+      "area": 45.0
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T2-R": {
+      "part_id": 256610,
+      "section_id": 256610,
+      "area": 45.0
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T3-L": {
+      "part_id": 206630,
+      "section_id": 206630,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T3-R": {
+      "part_id": 256630,
+      "section_id": 256630,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T4-L": {
+      "part_id": 206650,
+      "section_id": 206650,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C3-T4-R": {
+      "part_id": 256650,
+      "section_id": 256650,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C4-T3-L": {
+      "part_id": 206640,
+      "section_id": 206640,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C4-T3-R": {
+      "part_id": 256640,
+      "section_id": 256640,
+      "area": 35.3
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C4-T4-L": {
+      "part_id": 206660,
+      "section_id": 206660,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C4-T4-R": {
+      "part_id": 256660,
+      "section_id": 256660,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C5-T4-L": {
+      "part_id": 206670,
+      "section_id": 206670,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C5-T4-R": {
+      "part_id": 256670,
+      "section_id": 256670,
+      "area": 27.2
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C6-T5-L": {
+      "part_id": 206680,
+      "section_id": 206680,
+      "area": 45.4
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C6-T5-R": {
+      "part_id": 256680,
+      "section_id": 256680,
+      "area": 45.4
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C7-T5-L": {
+      "part_id": 206690,
+      "section_id": 206690,
+      "area": 45.4
+    },
+    "NE-Muscle-Semispinalis-Cervicis-C7-T5-R": {
+      "part_id": 256690,
+      "section_id": 256690,
+      "area": 45.4
+    },
+    "NE-Muscle-Serratus-Post-Sup-C6-R1-L": {
+      "part_id": 206760,
+      "section_id": 206760,
+      "area": 56.0
+    },
+    "NE-Muscle-Serratus-Post-Sup-C6-R1-R": {
+      "part_id": 256760,
+      "section_id": 256760,
+      "area": 56.0
+    },
+    "NE-Muscle-Serratus-Post-Sup-C7-R3-L": {
+      "part_id": 206770,
+      "section_id": 206770,
+      "area": 65.9
+    },
+    "NE-Muscle-Serratus-Post-Sup-C7-R3-R": {
+      "part_id": 256770,
+      "section_id": 256770,
+      "area": 65.9
+    },
+    "NE-Muscle-Serratus-Post-Sup-C7-R4-L": {
+      "part_id": 206780,
+      "section_id": 206780,
+      "area": 50.2
+    },
+    "NE-Muscle-Serratus-Post-Sup-C7-R4-R": {
+      "part_id": 256780,
+      "section_id": 256780,
+      "area": 50.2
+    },
+    "NE-Muscle-Serratus-Post-Sup-T1-R4-L": {
+      "part_id": 206790,
+      "section_id": 206790,
+      "area": 25.3
+    },
+    "NE-Muscle-Serratus-Post-Sup-T1-R4-R": {
+      "part_id": 256790,
+      "section_id": 256790,
+      "area": 25.3
+    },
+    "NE-Muscle-Splenius-Capitis-S-C5-L": {
+      "part_id": 205910,
+      "section_id": 205910,
+      "area": 17.6
+    },
+    "NE-Muscle-Splenius-Capitis-S-C5-R": {
+      "part_id": 255910,
+      "section_id": 255910,
+      "area": 17.6
+    },
+    "NE-Muscle-Splenius-Capitis-S-C6-A-L": {
+      "part_id": 205920,
+      "section_id": 205920,
+      "area": 27.9
+    },
+    "NE-Muscle-Splenius-Capitis-S-C6-A-R": {
+      "part_id": 255920,
+      "section_id": 255920,
+      "area": 27.9
+    },
+    "NE-Muscle-Splenius-Capitis-S-C6-B-L": {
+      "part_id": 205930,
+      "section_id": 205930,
+      "area": 39.6
+    },
+    "NE-Muscle-Splenius-Capitis-S-C6-B-R": {
+      "part_id": 255930,
+      "section_id": 255930,
+      "area": 39.6
+    },
+    "NE-Muscle-Splenius-Capitis-S-C7-A-L": {
+      "part_id": 205940,
+      "section_id": 205940,
+      "area": 38.7
+    },
+    "NE-Muscle-Splenius-Capitis-S-C7-A-R": {
+      "part_id": 255940,
+      "section_id": 255940,
+      "area": 38.7
+    },
+    "NE-Muscle-Splenius-Capitis-S-C7-B-L": {
+      "part_id": 205950,
+      "section_id": 205950,
+      "area": 38.1
+    },
+    "NE-Muscle-Splenius-Capitis-S-C7-B-R": {
+      "part_id": 255950,
+      "section_id": 255950,
+      "area": 38.1
+    },
+    "NE-Muscle-Splenius-Capitis-S-T1-L": {
+      "part_id": 205960,
+      "section_id": 205960,
+      "area": 38.7
+    },
+    "NE-Muscle-Splenius-Capitis-S-T1-R": {
+      "part_id": 255960,
+      "section_id": 255960,
+      "area": 38.7
+    },
+    "NE-Muscle-Splenius-Capitis-S-T2-L": {
+      "part_id": 205970,
+      "section_id": 205970,
+      "area": 49.4
+    },
+    "NE-Muscle-Splenius-Capitis-S-T2-R": {
+      "part_id": 255970,
+      "section_id": 255970,
+      "area": 49.4
+    },
+    "NE-Muscle-Splenius-Cervicis-C1-T3-L": {
+      "part_id": 206560,
+      "section_id": 206560,
+      "area": 49.5
+    },
+    "NE-Muscle-Splenius-Cervicis-C1-T3-R": {
+      "part_id": 256560,
+      "section_id": 256560,
+      "area": 49.5
+    },
+    "NE-Muscle-Splenius-Cervicis-C2-T3-L": {
+      "part_id": 206570,
+      "section_id": 206570,
+      "area": 49.5
+    },
+    "NE-Muscle-Splenius-Cervicis-C2-T3-R": {
+      "part_id": 256570,
+      "section_id": 256570,
+      "area": 49.5
+    },
+    "NE-Muscle-Sternohyoid-Head-Clavicle-L": {
+      "part_id": 205150,
+      "section_id": 205150,
+      "area": 8.5
+    },
+    "NE-Muscle-Sternohyoid-Head-Clavicle-R": {
+      "part_id": 255150,
+      "section_id": 255150,
+      "area": 8.5
+    },
+    "NE-Muscle-Sternohyoid-Head-Sternum-L": {
+      "part_id": 205140,
+      "section_id": 205140,
+      "area": 25.6
+    },
+    "NE-Muscle-Sternohyoid-Head-Sternum-R": {
+      "part_id": 255140,
+      "section_id": 255140,
+      "area": 25.6
+    },
+    "NE-Muscle-Sternothyroid-Head-R1-L": {
+      "part_id": 205180,
+      "section_id": 205180,
+      "area": 19.7
+    },
+    "NE-Muscle-Sternothyroid-Head-R1-R": {
+      "part_id": 255180,
+      "section_id": 255180,
+      "area": 19.7
+    },
+    "NE-Muscle-Sternothyroid-Head-Sternum-L": {
+      "part_id": 205170,
+      "section_id": 205170,
+      "area": 31.7
+    },
+    "NE-Muscle-Sternothyroid-Head-Sternum-R": {
+      "part_id": 255170,
+      "section_id": 255170,
+      "area": 31.7
+    },
+    "NE-Muscle-Trapezius-Desc-C3-Scap-L": {
+      "part_id": 206120,
+      "section_id": 206120,
+      "area": 33.6
+    },
+    "NE-Muscle-Trapezius-Desc-C3-Scap-R": {
+      "part_id": 256120,
+      "section_id": 256120,
+      "area": 33.6
+    },
+    "NE-Muscle-Trapezius-Desc-C4-Scap-L": {
+      "part_id": 206130,
+      "section_id": 206130,
+      "area": 142.3
+    },
+    "NE-Muscle-Trapezius-Desc-C4-Scap-R": {
+      "part_id": 256130,
+      "section_id": 256130,
+      "area": 142.3
+    },
+    "NE-Muscle-Trapezius-Desc-C5-Scap-L": {
+      "part_id": 206140,
+      "section_id": 206140,
+      "area": 101.1
+    },
+    "NE-Muscle-Trapezius-Desc-C5-Scap-R": {
+      "part_id": 256140,
+      "section_id": 256140,
+      "area": 101.1
+    },
+    "NE-Muscle-Trapezius-Desc-S-Scap-L": {
+      "part_id": 206110,
+      "section_id": 206110,
+      "area": 76.7
+    },
+    "NE-Muscle-Trapezius-Desc-S-Scap-R": {
+      "part_id": 256110,
+      "section_id": 256110,
+      "area": 76.7
+    },
+    "NE-Muscle-Trapezius-Trans-C6-Scap-L": {
+      "part_id": 206150,
+      "section_id": 206150,
+      "area": 238.0
+    },
+    "NE-Muscle-Trapezius-Trans-C6-Scap-R": {
+      "part_id": 256150,
+      "section_id": 256150,
+      "area": 238.0
+    },
+    "NE-Muscle-Trapezius-Trans-C7-Scap-L": {
+      "part_id": 206160,
+      "section_id": 206160,
+      "area": 257.0
+    },
+    "NE-Muscle-Trapezius-Trans-C7-Scap-R": {
+      "part_id": 256160,
+      "section_id": 256160,
+      "area": 257.0
+    }
+  }
+}

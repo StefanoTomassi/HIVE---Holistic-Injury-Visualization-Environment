@@ -127,12 +127,72 @@ def select_simulation_data() -> html.Div:
                     ]
                 )
             ),
-            dcc.Link(
-                dbc.Button("Run analysis", color="primary", className="mt-3"),
-                href="/dashboard",
-                id="run-analysis-link",
-                refresh=False,
-                ),
+            dbc.Card(
+                dbc.CardBody(
+                    [
+                        html.H4(
+                            "Dynasaur measurement selection",
+                            className="card-title",
+                        ),
+                        html.P(
+                            "Select the Dynasaur time-series measurements to export.",
+                            className="card-text",
+                        ),
+                        dcc.Link(
+                            dbc.Button(
+                                "Select Dynasaur measurements",
+                                color="primary",
+                            ),
+                            href="/dynasaur-selection",
+                            id="dynasaur-selection-link",
+                            refresh=False,
+                        ),
+                    ]
+                )
+            ),
+            dbc.Card(
+                dbc.CardBody(
+                    [
+                        html.H4(
+                            "Automatic whiplash data analysis",
+                            className="card-title",
+                        ),
+                        html.P(
+                            "Run the automatic whiplash analysis workflow.",
+                            className="card-text",
+                        ),
+                        dbc.Button(
+                            "Run whiplash analysis",
+                            color="primary",
+                            id="whiplash-analysis-button",
+                        ),
+                        html.Div(
+                            "Analysis not started.",
+                            id="whiplash-analysis-status",
+                            className="mt-2",
+                        ),
+                    ]
+                )
+            ),
+            dbc.Card(
+                dbc.CardBody(
+                    [
+                        html.H4(
+                            "Automatic restraint system data analysis",
+                            className="card-title",
+                        ),
+                        html.P(
+                            "Run the automatic restraint system analysis workflow.",
+                            className="card-text",
+                        ),
+                        dbc.Button(
+                            "Run restraint system analysis",
+                            color="primary",
+                            id="restraint-system-analysis-button",
+                        ),
+                    ]
+                )
+            ),
         ]
     )
 

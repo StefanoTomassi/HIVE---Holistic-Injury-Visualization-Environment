@@ -1,43 +1,52 @@
 import pickle
+import re
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
 
 
-def _parse_fixed_width_id(line: str) -> str:
-    """Read an LS-DYNA ID from columns 1-10, with whitespace fallback."""
+def _parse_card(line: str) -> str:
+    """Read an LS-DYNA card. Stores in a list the field of each card."""
     fields = line.strip().split()
     if not fields:
         raise ValueError("Cannot parse an ID from an empty keyword line.")
 
-    fixed_width_id = line[:10].strip()
-    if fixed_width_id:
+    field_1 = line[:10].strip()
+    field_2 = line[10:20].strip()
+    field_3 = line[20:30].strip()
+    field_4 = line[30:40].strip()
+    field_5 = line[40:50].strip()
+    field_6 = line[50:60].strip()
+    field_7 = line[60:70].strip()
+    field_8 = line[70:80].strip()
+    fields = [field_1, field_2, field_3, field_4, field_5, field_6, field_7, field_8]
+    if field_1:
         try:
-            int(fixed_width_id)
+            int(field_1)
         except ValueError:
             pass
         else:
-            return fixed_width_id
-    return fields[0]
+            return fields
+    return fields
 
 
-def _parse_fixed_width_id_name(line: str) -> Tuple[str, str]:
-    """Read an ID and name from a fixed-width LS-DYNA record."""
-    element_id = _parse_fixed_width_id(line)
-    element_name = line[10:].strip()
-    fields = line.strip().split()
-    if not element_name and len(fields) > 1:
-        element_name = fields[1]
+def _parse_card_id_heading(line: str) -> Tuple[str, str]:
+    """Read an ID and heading from fixed-width or whitespace input."""
+    match = re.match(r"^\s*(\d+)(?:\s+|(?=[^\d\s]))(.*)$", line)
+    if match is None:
+        raise ValueError("Cannot parse an ID from an empty history card.")
+    element_id = match.group(1)
+    element_name = match.group(2).strip()
     if not element_name:
         element_name = "object_" + element_id
     return element_id, element_name
 
 
 def read_keywords(dir_file: str) -> dict:
-    """Reads an LS-DYNA keyword file and returns a dictionary of keywords and their associated lines.
+    """Reads an LS-DYNA keyword file and returns a dictionary of keywords and their associated cards.
     Args:
         dir_file (str): Path to the LS-DYNA keyword file.
     Returns:
-        dict: A dictionary where keys are keywords (without the leading '*') and values are lists of lines associated with each keyword."""
+        dict: A dictionary where keys are keywords (without the leading '*') and values are lists of cards associated with each keyword."""
 
     file = open(dir_file, 'r')
     cards = {}
@@ -70,12 +79,14 @@ def get_dyna_history_node_id(elements: list) -> dict:
     """
     element_dict = {}
     for element in elements:
-        if not element.strip():
-            continue
-
-        element_id, element_name = _parse_fixed_width_id_name(element)
+        element_id, element_name = _parse_card_id_heading(element)
         element_dict[element_name] = element_id
     return element_dict
+
+
+def get_dyna_history_beam_id(elements: list) -> dict:
+    """Extract beam element names and IDs from history beam-ID cards."""
+    return get_dyna_history_node_id(elements)
 
 def get_dyna_parts(cards_dict: dict) -> dict:
     """
@@ -100,8 +111,23 @@ def get_dyna_parts(cards_dict: dict) -> dict:
     parts = {}
     for card, card_lines in cards_dict.items():
         card_suffix = card[len("*PART"):]
-        if card != "*PART" and not (
-            card_suffix.startswith("_") and card_suffix[1:].isdigit()
+        is_numbered_part = card_suffix.startswith("_") and card_suffix[1:].isdigit()
+        is_numbered_contact_part = (
+            card.startswith("*PART_CONTACT_")
+            and card[len("*PART_CONTACT_") :].isdigit()
+        )
+        is_averaged_part = (
+            card == "*PART_AVERAGED"
+            or (
+                card.startswith("*PART_AVERAGED_")
+                and card[len("*PART_AVERAGED_") :].isdigit()
+            )
+        )
+        if (
+            card != "*PART"
+            and not is_numbered_part
+            and not is_numbered_contact_part
+            and not is_averaged_part
         ):
             continue
 
@@ -124,6 +150,68 @@ def get_dyna_parts(cards_dict: dict) -> dict:
             parts[pending_name] = part_id
             pending_name = None
     return parts
+
+
+def get_dyna_part_sections(cards_dict: dict) -> dict:
+    """Extract part IDs and beam-section IDs from ``*PART`` cards."""
+    parts = {}
+    for card, card_lines in cards_dict.items():
+        card_suffix = card[len("*PART"):]
+        is_numbered_part = card_suffix.startswith("_") and card_suffix[1:].isdigit()
+        is_averaged_part = (
+            card == "*PART_AVERAGED"
+            or (
+                card.startswith("*PART_AVERAGED_")
+                and card[len("*PART_AVERAGED_") :].isdigit()
+            )
+        )
+        if card != "*PART" and not is_numbered_part and not is_averaged_part:
+            continue
+
+        pending_name = None
+        for raw_line in card_lines:
+            line = raw_line.strip()
+            if not line or line.startswith("$"):
+                continue
+            fields = line.split()
+            try:
+                part_id = int(fields[0])
+            except (IndexError, ValueError):
+                pending_name = line
+                continue
+            if pending_name is None or len(fields) < 2:
+                continue
+            try:
+                section_id = int(fields[1])
+            except ValueError:
+                section_id = None
+            parts[pending_name] = {
+                "part_id": part_id,
+                "section_id": section_id,
+            }
+            pending_name = None
+    return parts
+
+
+def get_dyna_beam_section_areas(cards_dict: dict) -> dict:
+    """Extract ``section_id -> area`` mappings from beam-section cards."""
+    sections = {}
+    for card, card_lines in cards_dict.items():
+        if not card.startswith("*SECTION_BEAM"):
+            continue
+        lines = [line.strip() for line in card_lines if line.strip()]
+        for index in range(1, len(lines) - 1):
+            fields = lines[index].split()
+            if len(fields) < 2:
+                continue
+            try:
+                section_id = int(fields[0])
+                area = float(lines[index + 1].split()[0])
+            except (IndexError, ValueError):
+                continue
+            sections[section_id] = area
+            index += 2
+    return sections
 
 
 def get_elements(
@@ -163,10 +251,11 @@ def get_elements(
         return int(fields[0]), int(fields[1])
 
     for card, card_lines in cards_dict.items():
-        if card == "*ELEMENT_SHELL" or (
-            card.startswith("*ELEMENT_SHELL_")
-            and card[len("*ELEMENT_SHELL_"):].isdigit()
-        ):
+        #or (
+        #  card.startswith("*ELEMENT_SHELL_")
+        #   and card[len("*ELEMENT_SHELL_"):].isdigit()
+        #)
+        if card == "*ELEMENT_SHELL":
             lines = nonempty_lines(card_lines)
             index = 0
             while index < len(lines):
@@ -249,7 +338,7 @@ def get_dyna_joints(cards_dict: dict) -> dict:
             lines = [line for line in cards_dict[card] if line.strip()]
             if not lines:
                 continue
-            joint_id, joint_name = _parse_fixed_width_id_name(lines[0])
+            joint_id, joint_name = _parse_card_id_heading(lines[0])
             joints[joint_name] = joint_id
     return joints
 
@@ -269,28 +358,34 @@ def get_dyna_boundary_motions(cards_dict: dict) -> dict:
             lines = [line for line in cards_dict[card] if line.strip()]
             if not lines:
                 continue
-            motion_id, motion_name = _parse_fixed_width_id_name(lines[0])
+            motion_id, motion_name = _parse_card_id_heading(lines[0])
             boundary_motions[motion_name] = motion_id
     return boundary_motions
 
 def get_dyna_contact(cards_dict: dict) -> dict:
-    """
-    Extracts the contact information from the LS-DYNA keyword cards.
+    """Extract contact object names and IDs from all ``*CONTACT`` cards.
 
-    Parameters:
-    cards_dict (dict): A dictionary containing the LS-DYNA keyword cards.
-
-    Returns:
-    dict: A dictionary mapping contact IDs to contact names.
+    Contact cards that include an explicit numeric ID and heading use that
+    information. For cards without an explicit ID, the one-based contact
+    occurrence is used because ``rcforc`` indexes contacts in that order.
     """
     contacts = {}
-    for card in cards_dict:
-        if 'CONTACT_AUTOMATIC' in card:
-            lines = [line for line in cards_dict[card] if line.strip()]
-            if not lines:
-                continue
-            contact_id, contact_name = _parse_fixed_width_id_name(lines[0])
-            contacts[contact_name] = contact_id
+    contact_index = 0
+    for card, card_lines in cards_dict.items():
+        if not card.startswith("*CONTACT"):
+            continue
+        contact_index += 1
+        lines = [line for line in card_lines if line.strip()]
+        if not lines:
+            contact_name = f"contact_{contact_index}"
+            contacts[contact_name] = str(contact_index)
+            continue
+        try:
+            contact_id, contact_name = _parse_card_id_heading(lines[0])
+        except ValueError:
+            contact_id = str(contact_index)
+            contact_name = f"contact_{contact_index}"
+        contacts[contact_name] = contact_id
     return contacts
 
 def get_selected_part(desired_parts: str, part_dict: dict) -> list:
@@ -319,26 +414,26 @@ def get_dyna_seatbelt(cards_dict: dict) -> dict:
             lines = [line for line in cards_dict[card] if line.strip()]
             if not lines:
                 continue
-            pretensioner_id = int(_parse_fixed_width_id(lines[0]))
+            pretensioner_id = int(_parse_card(lines[0]))
             pretensioner_name = 'pretensioner_' + pretensioner_id.__str__()
             pretensioners[pretensioner_name] = pretensioner_id
         if 'DATABASE_HISTORY_SEATBELT_SLIPRING_ID' in card:
             for line in cards_dict[card]:
                 if not line.strip():
                     continue
-                slipring_id, slipring_name = _parse_fixed_width_id_name(line)
+                slipring_id, slipring_name = _parse_card_id_heading(line)
                 sliprings[slipring_name] = slipring_id
         if 'DATABASE_HISTORY_SEATBELT_RETRACTOR_ID' in card:
             for line in cards_dict[card]:
                 if not line.strip():
                     continue
-                retractor_id, retractor_name = _parse_fixed_width_id_name(line)
+                retractor_id, retractor_name = _parse_card_id_heading(line)
                 retractors[retractor_name] = retractor_id
         if 'DATABASE_HISTORY_SEATBELT_ID' in card:
             for line in cards_dict[card]:
                 if not line.strip():
                     continue
-                seatbelt_id, seatbelt_name = _parse_fixed_width_id_name(line)
+                seatbelt_id, seatbelt_name = _parse_card_id_heading(line)
                 seatbelts[seatbelt_name] = seatbelt_id
 
     return seatbelts, retractors, sliprings, pretensioners

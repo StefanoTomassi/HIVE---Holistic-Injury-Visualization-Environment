@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from Strain_limits_and_ROM import strain_limits
+from whiplash_analysis.reference_values import strain_limits
 def get_strain(dr, p):
     """
     

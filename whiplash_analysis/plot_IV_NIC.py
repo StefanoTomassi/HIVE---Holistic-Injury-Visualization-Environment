@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import Strain_limits_and_ROM
+import whiplash_analysis.reference_values as reference_values
 from get_IV_NIC import get_IV_NIC, get_SA_nodes, get_SA_nodes, get_dynamic_theta, plot_kinematic, plot_IV_NIC
 from core.io.create_objects import write_node_id as hnid
 from core.io.keyword_reader import read_keywords as rk
@@ -48,7 +48,7 @@ for j in range(n_seg):
     theta = get_dynamic_theta(upx, upz, lowx, lowz)
     theta_dynamic_segments.append(theta)
 theta_dynamic_segments = np.array(theta_dynamic_segments)
-for theta,ROM,ROM_label in zip(theta_dynamic_segments, Strain_limits_and_ROM.ROMs, Strain_limits_and_ROM.ROM_labels):
+for theta,ROM,ROM_label in zip(theta_dynamic_segments, reference_values.ROMs, reference_values.ROM_labels):
     IV_NIC = get_IV_NIC(theta, ROM)
     plot_IV_NIC(time, IV_NIC, ROM,ROM_label)
     if max(IV_NIC) > 0.75 or min(IV_NIC) < -1:
