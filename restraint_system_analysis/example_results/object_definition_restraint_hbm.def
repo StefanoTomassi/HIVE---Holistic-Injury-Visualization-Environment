@@ -1,0 +1,431 @@
+{
+  "OBJECTS": [
+    {
+      "type": "NODE",
+      "name": "HE-Head-CoG-Accelerometer-Global",
+      "id": [
+        11090010
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "HE-Head-COG-Local",
+      "id": [
+        11090000
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-T1_COG",
+      "id": [
+        14091010
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-Sternum_Mid",
+      "id": [
+        14093503
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-T8_COG",
+      "id": [
+        14091080
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R1-Cortical-L",
+      "id": [
+        10403014
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R1-Cortical-R",
+      "id": [
+        10453014
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R2-Cortical-L",
+      "id": [
+        10403024
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R2-Cortical-R",
+      "id": [
+        10453024
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R3-Cortical-L",
+      "id": [
+        10403034
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R3-Cortical-R",
+      "id": [
+        10453034
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R4-Cortical-L",
+      "id": [
+        10403044
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R4-Cortical-R",
+      "id": [
+        10453044
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R5-Cortical-L",
+      "id": [
+        10403054
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R5-Cortical-R",
+      "id": [
+        10453054
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R6-Cortical-L",
+      "id": [
+        10403064
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R6-Cortical-R",
+      "id": [
+        10453064
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R7-Cortical-L",
+      "id": [
+        10403074
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R7-Cortical-R",
+      "id": [
+        10453074
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R8-Cortical-L",
+      "id": [
+        10403084
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R8-Cortical-R",
+      "id": [
+        10453084
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R9-Cortical-L",
+      "id": [
+        10403094
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R9-Cortical-R",
+      "id": [
+        10453094
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R10-Cortical-L",
+      "id": [
+        10403104
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R10-Cortical-R",
+      "id": [
+        10453104
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R11-Cortical-L",
+      "id": [
+        10403114
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R11-Cortical-R",
+      "id": [
+        10453114
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R12-Cortical-L",
+      "id": [
+        10403124
+      ]
+    },
+    {
+      "type": "OBJECT",
+      "name": "TX-Ribcage-R12-Cortical-R",
+      "id": [
+        10453124
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "PE-Acetabulum-MP-AC",
+      "id": [
+        16091000
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_01",
+      "id": [
+        12143076
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_02",
+      "id": [
+        12143077
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_03",
+      "id": [
+        12143078
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_04",
+      "id": [
+        12143079
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_05",
+      "id": [
+        12143080
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_06",
+      "id": [
+        12143081
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_07",
+      "id": [
+        12143082
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_08",
+      "id": [
+        12143083
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_09",
+      "id": [
+        12143084
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_10",
+      "id": [
+        12143085
+      ]
+    },
+    {
+      "type": "ELEMENT",
+      "name": "TX-Spine_force_output_11",
+      "id": [
+        12143086
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "VEHICLE-reference",
+      "id": [
+        1062552
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "NE-C1_COG",
+      "id": [
+        12091010
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "NE-C4_COG",
+      "id": [
+        12091040
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "NE-C7_COG",
+      "id": [
+        12091070
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-T4_COG",
+      "id": [
+        14091040
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-T12_COG",
+      "id": [
+        14091120
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "AB-L3_center",
+      "id": [
+        15091034
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "AB-L5_center",
+      "id": [
+        15091054
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "PE-Sacrum-anterior",
+      "id": [
+        16091053
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-Sternum_IJ",
+      "id": [
+        14093501
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "TX-Sternum_PX",
+      "id": [
+        14093502
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "UX-Clavicle-lat-L",
+      "id": [
+        13091122
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "UX-GH-Humerus-L",
+      "id": [
+        13091310
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "UX-Humerus-EL-EM-MP-L",
+      "id": [
+        13091330
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "UX-Carpal-RS-US-MP-L",
+      "id": [
+        13091600
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "PE-ASIS-L",
+      "id": [
+        16091001
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "LX-Femur-head-O-L",
+      "id": [
+        17091110
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "LX-Femur-FEL-FEM-MP-F-L",
+      "id": [
+        17091190
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "LX-IM-Talus-L",
+      "id": [
+        17094110
+      ]
+    },
+    {
+      "type": "NODE",
+      "name": "LX-Calcaneus-post-L",
+      "id": [
+        17091703
+      ]
+    }
+  ]
+}

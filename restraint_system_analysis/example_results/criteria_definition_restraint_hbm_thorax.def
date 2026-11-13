@@ -1,0 +1,124 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": []
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "TX-Sternum_Mid_x_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_y_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, y_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_z_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_x_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_y_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, y_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_z_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      }
+    ]
+  }
+]

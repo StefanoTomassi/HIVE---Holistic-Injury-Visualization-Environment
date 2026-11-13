@@ -41,6 +41,7 @@ def main() -> None:
         select_data,
         whiplash_page,
     )
+    from GUI.layout.pages import restraint_page
     from GUI.layout.Plots.criteria_plots import register_criteria_callbacks
     from GUI.layout.Plots.signal_plots import register_signal_callbacks
 
@@ -50,6 +51,7 @@ def main() -> None:
     register_signal_callbacks(app)
     register_criteria_callbacks(app)
     register_animation_callbacks(app)
+    restraint_page.register_callbacks(app)
 
     @app.callback(
         Output("url", "pathname"),
@@ -98,6 +100,7 @@ def main() -> None:
             dcc.Store(id="whiplash-part-energy-csv-selection", data=None),
             dcc.Store(id="whiplash-beam-csv-selection", data=None),
             dcc.Store(id="whiplash-navigation-request", data=False),
+            dcc.Store(id="restraint-hbm-results", data=None),
             dcc.Loading(
                 dash.page_container,
                 type="default",
@@ -105,6 +108,7 @@ def main() -> None:
                 color="#0173b2",
             ),
             animation_curtain(),
+            restraint_page.progress_overlay(),
         ],
         fluid=True,
     )

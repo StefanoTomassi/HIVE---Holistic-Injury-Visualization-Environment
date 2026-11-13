@@ -1,0 +1,916 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": []
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "VEHICLE-reference_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "VEHICLE-reference_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "HE-Head-CoG-Accelerometer-Global_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "HE-Head-CoG-Accelerometer-Global_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C1_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C1_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C4_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C4_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C7_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C7_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T1_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T1_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T4_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T4_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T12_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T12_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L3_center_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L3_center_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L5_center_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L5_center_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Sacrum-anterior_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Sacrum-anterior_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_IJ_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_IJ_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_PX_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_PX_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Clavicle-lat-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Clavicle-lat-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-GH-Humerus-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-GH-Humerus-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Humerus-EL-EM-MP-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Humerus-EL-EM-MP-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Carpal-RS-US-MP-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Carpal-RS-US-MP-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Acetabulum-MP-AC_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Acetabulum-MP-AC_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-ASIS-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-ASIS-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-head-O-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-head-O-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-FEL-FEM-MP-F-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-FEL-FEM-MP-F-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-IM-Talus-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-IM-Talus-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Calcaneus-post-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Calcaneus-post-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      }
+    ]
+  }
+]

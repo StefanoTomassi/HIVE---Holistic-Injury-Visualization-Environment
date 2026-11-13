@@ -1,0 +1,256 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": []
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "pelvis_resultant_acceleration_CFC1000",
+        "part_of": "LOWER",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "res",
+            "param": {
+              "data_vector": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 1000,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "PE-Acetabulum-MP-AC",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "PE-Acetabulum-MP-AC",
+                      "array": [
+                        "(0, x_acceleration)",
+                        "(0, y_acceleration)",
+                        "(0, z_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_01_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_01",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_01",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_02_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_02",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_02",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_03_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_03",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_03",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_04_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_04",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_04",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_05_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_05",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_05",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_06_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_06",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_06",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_07_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_07",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_07",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_08_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_08",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_08",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_09_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_09",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_09",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_10_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_10",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_10",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_11_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_11",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_11",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      }
+    ]
+  }
+]

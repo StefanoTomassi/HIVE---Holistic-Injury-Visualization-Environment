@@ -1,0 +1,2353 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": [
+      {
+        "name": "HIC15",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "max",
+          "param": {
+            "data_vector": {
+              "function": {
+                "name": "HIC_15",
+                "param": {
+                  "time": {
+                    "type": "NODE",
+                    "ID": "HE-Head-CoG-Accelerometer-Global",
+                    "array": [
+                      "(0, time)"
+                    ]
+                  },
+                  "a_res": {
+                    "function": {
+                      "name": "res",
+                      "param": {
+                        "data_vector": {
+                          "function": {
+                            "name": "cfc",
+                            "param": {
+                              "cfc": 1000,
+                              "time": {
+                                "type": "NODE",
+                                "ID": "HE-Head-CoG-Accelerometer-Global",
+                                "array": [
+                                  "(0, time)"
+                                ]
+                              },
+                              "sampled_array": {
+                                "type": "NODE",
+                                "ID": "HE-Head-CoG-Accelerometer-Global",
+                                "array": [
+                                  "(0, x_acceleration)",
+                                  "(0, y_acceleration)",
+                                  "(0, z_acceleration)"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "BrIC",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "BrIC",
+          "param": {
+            "r_vel": {
+              "type": "NODE",
+              "ID": "HE-Head-COG-Local",
+              "array": [
+                "(0, rx_velocity)",
+                "(0, ry_velocity)",
+                "(0, rz_velocity)"
+              ]
+            },
+            "crit_rx_velocity": 66.25,
+            "crit_ry_velocity": 56.45,
+            "crit_rz_velocity": 42.87
+          }
+        }
+      },
+      {
+        "name": "DAMAGE",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "DAMAGE",
+          "param": {
+            "ra_x": {
+              "type": "NODE",
+              "ID": "HE-Head-COG-Local",
+              "array": [
+                "(0, rx_acceleration)"
+              ]
+            },
+            "ra_y": {
+              "type": "NODE",
+              "ID": "HE-Head-COG-Local",
+              "array": [
+                "(0, ry_acceleration)"
+              ]
+            },
+            "ra_z": {
+              "type": "NODE",
+              "ID": "HE-Head-COG-Local",
+              "array": [
+                "(0, rz_acceleration)"
+              ]
+            },
+            "time": {
+              "type": "NODE",
+              "ID": "HE-Head-COG-Local",
+              "array": [
+                "(0, time)"
+              ]
+            },
+            "mx": 1,
+            "my": 1,
+            "mz": 1,
+            "kxx": 32142,
+            "kyy": 23493,
+            "kzz": 16935,
+            "kxy": 0,
+            "kyz": 0,
+            "kxz": 1636.3,
+            "a0": 0,
+            "a1": 0.0059148,
+            "beta": 2.9903
+          }
+        }
+      },
+      {
+        "name": "DAMAGE_risk_AIS1",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "extended_ccdf_weibull",
+          "param": {
+            "x": {
+              "function": {
+                "name": "DAMAGE",
+                "param": {
+                  "ra_x": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rx_acceleration)"
+                    ]
+                  },
+                  "ra_y": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, ry_acceleration)"
+                    ]
+                  },
+                  "ra_z": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rz_acceleration)"
+                    ]
+                  },
+                  "time": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, time)"
+                    ]
+                  },
+                  "mx": 1,
+                  "my": 1,
+                  "mz": 1,
+                  "kxx": 32142,
+                  "kyy": 23493,
+                  "kzz": 16935,
+                  "kxy": 0,
+                  "kyz": 0,
+                  "kxz": 1636.3,
+                  "a0": 0,
+                  "a1": 0.0059148,
+                  "beta": 2.9903
+                }
+              }
+            },
+            "a": -0.93140437,
+            "b": 0.245218244,
+            "c": 0.017,
+            "d": 0.957
+          }
+        }
+      },
+      {
+        "name": "DAMAGE_risk_AIS2",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "extended_ccdf_weibull",
+          "param": {
+            "x": {
+              "function": {
+                "name": "DAMAGE",
+                "param": {
+                  "ra_x": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rx_acceleration)"
+                    ]
+                  },
+                  "ra_y": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, ry_acceleration)"
+                    ]
+                  },
+                  "ra_z": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rz_acceleration)"
+                    ]
+                  },
+                  "time": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, time)"
+                    ]
+                  },
+                  "mx": 1,
+                  "my": 1,
+                  "mz": 1,
+                  "kxx": 32142,
+                  "kyy": 23493,
+                  "kzz": 16935,
+                  "kxy": 0,
+                  "kyz": 0,
+                  "kxz": 1636.3,
+                  "a0": 0,
+                  "a1": 0.0059148,
+                  "beta": 2.9903
+                }
+              }
+            },
+            "a": -0.778705069,
+            "b": 0.258064516,
+            "c": 0.017,
+            "d": 0.957
+          }
+        }
+      },
+      {
+        "name": "DAMAGE_risk_AIS4+",
+        "type_of_criteria": "injury",
+        "part_of": "HEAD",
+        "function": {
+          "name": "extended_ccdf_weibull",
+          "param": {
+            "x": {
+              "function": {
+                "name": "DAMAGE",
+                "param": {
+                  "ra_x": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rx_acceleration)"
+                    ]
+                  },
+                  "ra_y": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, ry_acceleration)"
+                    ]
+                  },
+                  "ra_z": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, rz_acceleration)"
+                    ]
+                  },
+                  "time": {
+                    "type": "NODE",
+                    "ID": "HE-Head-COG-Local",
+                    "array": [
+                      "(0, time)"
+                    ]
+                  },
+                  "mx": 1,
+                  "my": 1,
+                  "mz": 1,
+                  "kxx": 32142,
+                  "kyy": 23493,
+                  "kzz": 16935,
+                  "kxy": 0,
+                  "kyz": 0,
+                  "kxz": 1636.3,
+                  "a0": 0,
+                  "a1": 0.0059148,
+                  "beta": 2.9903
+                }
+              }
+            },
+            "a": -0.436955775,
+            "b": 0.16526194,
+            "c": 0.017,
+            "d": 0.957
+          }
+        }
+      },
+      {
+        "name": "NIC_max",
+        "type_of_criteria": "injury",
+        "part_of": "NECK",
+        "function": {
+          "name": "max",
+          "param": {
+            "data_vector": {
+              "function": {
+                "name": "NIC",
+                "param": {
+                  "a_head": {
+                    "function": {
+                      "name": "cfc",
+                      "param": {
+                        "cfc": 180,
+                        "time": {
+                          "type": "NODE",
+                          "ID": "HE-Head-CoG-Accelerometer-Global",
+                          "array": [
+                            "(0, time)"
+                          ]
+                        },
+                        "sampled_array": {
+                          "type": "NODE",
+                          "ID": "HE-Head-CoG-Accelerometer-Global",
+                          "array": [
+                            "(0, x_acceleration)"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "a_t1": {
+                    "function": {
+                      "name": "cfc",
+                      "param": {
+                        "cfc": 60,
+                        "time": {
+                          "type": "NODE",
+                          "ID": "TX-T1_COG",
+                          "array": [
+                            "(0, time)"
+                          ]
+                        },
+                        "sampled_array": {
+                          "type": "NODE",
+                          "ID": "TX-T1_COG",
+                          "array": [
+                            "(0, x_acceleration)"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "time_": {
+                    "type": "NODE",
+                    "ID": "TX-T1_COG",
+                    "array": [
+                      "(0, time)"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "NIC_risk",
+        "type_of_criteria": "injury",
+        "part_of": "NECK",
+        "function": {
+          "name": "ccdf_sigmoid",
+          "param": {
+            "x": {
+              "function": {
+                "name": "max",
+                "param": {
+                  "data_vector": {
+                    "function": {
+                      "name": "NIC",
+                      "param": {
+                        "a_head": {
+                          "function": {
+                            "name": "cfc",
+                            "param": {
+                              "cfc": 180,
+                              "time": {
+                                "type": "NODE",
+                                "ID": "HE-Head-CoG-Accelerometer-Global",
+                                "array": [
+                                  "(0, time)"
+                                ]
+                              },
+                              "sampled_array": {
+                                "type": "NODE",
+                                "ID": "HE-Head-CoG-Accelerometer-Global",
+                                "array": [
+                                  "(0, x_acceleration)"
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "a_t1": {
+                          "function": {
+                            "name": "cfc",
+                            "param": {
+                              "cfc": 60,
+                              "time": {
+                                "type": "NODE",
+                                "ID": "TX-T1_COG",
+                                "array": [
+                                  "(0, time)"
+                                ]
+                              },
+                              "sampled_array": {
+                                "type": "NODE",
+                                "ID": "TX-T1_COG",
+                                "array": [
+                                  "(0, x_acceleration)"
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "time_": {
+                          "type": "NODE",
+                          "ID": "TX-T1_COG",
+                          "array": [
+                            "(0, time)"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "k": 0.21,
+            "x0": 15.952380952380953
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R1-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R1-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R1-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R1-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R2-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R2-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R2-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R2-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R3-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R3-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R3-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R3-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R4-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R4-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R4-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R4-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R5-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R5-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R5-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R5-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R6-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R6-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R6-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R6-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R7-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R7-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R7-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R7-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R8-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R8-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R8-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R8-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R9-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R9-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R9-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R9-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R10-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R10-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R10-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R10-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R11-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R11-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R11-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R11-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R12-Cortical-L_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R12-Cortical-L",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      },
+      {
+        "name": "TX-Ribcage-R12-Cortical-R_max_strain",
+        "type_of_criteria": "injury",
+        "part_of": "THORAX",
+        "function": {
+          "name": "stress_strain_part_max",
+          "param": {
+            "object_data": {
+              "type": "OBJECT",
+              "ID": "TX-Ribcage-R12-Cortical-R",
+              "strain_stress": "Strain"
+            },
+            "selection_tension_compression": "Tension",
+            "integration_point": "Max",
+            "nr_largest_elements": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "head_resultant_acceleration_CFC1000",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "res",
+            "param": {
+              "data_vector": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 1000,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, x_acceleration)",
+                        "(0, y_acceleration)",
+                        "(0, z_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "head_rx_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, rx_velocity)"
+          ]
+        }
+      },
+      {
+        "name": "head_ry_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, ry_velocity)"
+          ]
+        }
+      },
+      {
+        "name": "head_rz_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, rz_velocity)"
+          ]
+        }
+      },
+      {
+        "name": "NIC",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "NIC",
+            "param": {
+              "a_head": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 180,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, x_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              },
+              "a_t1": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 60,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "TX-T1_COG",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "TX-T1_COG",
+                      "array": [
+                        "(0, x_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              },
+              "time_": {
+                "type": "NODE",
+                "ID": "TX-T1_COG",
+                "array": [
+                  "(0, time)"
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "head_x_acceleration",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, x_acceleration)"
+          ]
+        }
+      },
+      {
+        "name": "T1_x_acceleration",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, x_acceleration)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_x_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_y_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, y_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_z_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_x_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_y_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, y_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_z_coordinate",
+        "part_of": "THORAX",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "pelvis_resultant_acceleration_CFC1000",
+        "part_of": "LOWER",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "res",
+            "param": {
+              "data_vector": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 1000,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "PE-Acetabulum-MP-AC",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "PE-Acetabulum-MP-AC",
+                      "array": [
+                        "(0, x_acceleration)",
+                        "(0, y_acceleration)",
+                        "(0, z_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_01_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_01",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_01",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_02_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_02",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_02",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_03_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_03",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_03",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_04_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_04",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_04",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_05_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_05",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_05",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_06_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_06",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_06",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_07_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_07",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_07",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_08_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_08",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_08",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_09_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_09",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_09",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_10_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_10",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_10",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Spine_force_output_11_axial",
+        "part_of": "LOWER",
+        "x": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_11",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "ELEMENT",
+          "ID": "TX-Spine_force_output_11",
+          "array": [
+            "(0, axial)"
+          ]
+        }
+      },
+      {
+        "name": "VEHICLE-reference_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "VEHICLE-reference_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "VEHICLE-reference",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "HE-Head-CoG-Accelerometer-Global_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "HE-Head-CoG-Accelerometer-Global_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C1_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C1_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C1_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C4_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C4_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C4_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C7_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "NE-C7_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "NE-C7_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T1_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T1_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T4_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T4_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T4_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T8_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T8_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T12_COG_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-T12_COG_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T12_COG",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L3_center_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L3_center_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L3_center",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L5_center_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "AB-L5_center_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "AB-L5_center",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Sacrum-anterior_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Sacrum-anterior_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Sacrum-anterior",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_IJ_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_IJ_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_IJ",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_Mid_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_Mid",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_PX_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "TX-Sternum_PX_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-Sternum_PX",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Clavicle-lat-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Clavicle-lat-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Clavicle-lat-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-GH-Humerus-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-GH-Humerus-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-GH-Humerus-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Humerus-EL-EM-MP-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Humerus-EL-EM-MP-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Humerus-EL-EM-MP-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Carpal-RS-US-MP-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "UX-Carpal-RS-US-MP-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "UX-Carpal-RS-US-MP-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Acetabulum-MP-AC_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-Acetabulum-MP-AC_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-Acetabulum-MP-AC",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-ASIS-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "PE-ASIS-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "PE-ASIS-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-head-O-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-head-O-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-head-O-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-FEL-FEM-MP-F-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Femur-FEL-FEM-MP-F-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Femur-FEL-FEM-MP-F-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-IM-Talus-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-IM-Talus-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-IM-Talus-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Calcaneus-post-L_x_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, x_coordinate)"
+          ]
+        }
+      },
+      {
+        "name": "LX-Calcaneus-post-L_z_coordinate",
+        "part_of": "MOTION",
+        "x": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "LX-Calcaneus-post-L",
+          "array": [
+            "(0, z_coordinate)"
+          ]
+        }
+      }
+    ]
+  }
+]

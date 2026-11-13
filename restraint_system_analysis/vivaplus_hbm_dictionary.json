@@ -1,0 +1,45 @@
+{
+  "model": "VIVA+ 2.0.1 seated occupant",
+  "hbm_main_file_glob": "vivaplus-*.key",
+  "dynasaur_ids_def": "00_vivaplus_IDs.def",
+  "nodes": {
+    "head_accel_global": "HE-Head-CoG-Accelerometer-Global",
+    "head_cog_local": "HE-Head-COG-Local",
+    "t1": "TX-T1_COG",
+    "sternum_mid": "TX-Sternum_Mid",
+    "chest_spine_reference": "TX-T8_COG",
+    "pelvis": "PE-Acetabulum-MP-AC"
+  },
+  "rib_groups": {
+    "pattern": "TX-Ribcage-R{rib}-Cortical-{side}",
+    "ribs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "sides": ["L", "R"]
+  },
+  "beam_sets": {
+    "thoracic_spine": "TX-Spine_force_output"
+  },
+  "beam_set_labels": {
+    "TX-Spine_force_output": ["T1-T2", "T2-T3", "T3-T4", "T4-T5", "T5-T6", "T6-T7",
+                              "T7-T8", "T8-T9", "T9-T10", "T10-T11", "T11-T12"]
+  },
+  "vehicle_reference_nodes": [
+    {"id": 1062552, "label": "vehicle body (Generic cockpit history node 'BIW below driver')"}
+  ],
+  "motion_chains": {
+    "Spine": ["HE-Head-CoG-Accelerometer-Global", "NE-C1_COG", "NE-C4_COG", "NE-C7_COG",
+              "TX-T1_COG", "TX-T4_COG", "TX-T8_COG", "TX-T12_COG", "AB-L3_center",
+              "AB-L5_center", "PE-Sacrum-anterior"],
+    "Chest": ["TX-T1_COG", "TX-Sternum_IJ", "TX-Sternum_Mid", "TX-Sternum_PX"],
+    "Arm": ["TX-Sternum_IJ", "UX-Clavicle-lat-L", "UX-GH-Humerus-L",
+            "UX-Humerus-EL-EM-MP-L", "UX-Carpal-RS-US-MP-L"],
+    "Pelvis": ["PE-Sacrum-anterior", "PE-Acetabulum-MP-AC", "PE-ASIS-L"],
+    "Leg": ["PE-Acetabulum-MP-AC", "LX-Femur-head-O-L", "LX-Femur-FEL-FEM-MP-F-L",
+            "LX-IM-Talus-L", "LX-Calcaneus-post-L"]
+  },
+  "load_cells_required": {
+    "upper_neck": "Section force at OC-C1 (needs *DATABASE_CROSS_SECTION + *DATABASE_SECFORC)",
+    "femur_L": "Section force at mid-femur left (needs *DATABASE_CROSS_SECTION + *DATABASE_SECFORC)",
+    "femur_R": "Section force at mid-femur right (needs *DATABASE_CROSS_SECTION + *DATABASE_SECFORC)",
+    "lumbar": "Section force at L1-L2 or similar (needs *DATABASE_CROSS_SECTION + *DATABASE_SECFORC)"
+  }
+}

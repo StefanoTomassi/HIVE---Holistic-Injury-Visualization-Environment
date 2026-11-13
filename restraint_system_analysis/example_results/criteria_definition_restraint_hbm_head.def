@@ -1,0 +1,112 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": []
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "head_resultant_acceleration_CFC1000",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "res",
+            "param": {
+              "data_vector": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 1000,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, x_acceleration)",
+                        "(0, y_acceleration)",
+                        "(0, z_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "head_rx_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, rx_velocity)"
+          ]
+        }
+      },
+      {
+        "name": "head_ry_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, ry_velocity)"
+          ]
+        }
+      },
+      {
+        "name": "head_rz_velocity",
+        "part_of": "HEAD",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-COG-Local",
+          "array": [
+            "(0, rz_velocity)"
+          ]
+        }
+      }
+    ]
+  }
+]

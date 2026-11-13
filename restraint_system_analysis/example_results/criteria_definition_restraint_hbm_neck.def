@@ -1,0 +1,121 @@
+[
+  {
+    "UNIT": {
+      "time": "ms",
+      "length": "mm",
+      "mass": "kg"
+    }
+  },
+  {
+    "CRITERIA": []
+  },
+  {
+    "DATA VISUALIZATION": [
+      {
+        "name": "NIC",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "function": {
+            "name": "NIC",
+            "param": {
+              "a_head": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 180,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "HE-Head-CoG-Accelerometer-Global",
+                      "array": [
+                        "(0, x_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              },
+              "a_t1": {
+                "function": {
+                  "name": "cfc",
+                  "param": {
+                    "cfc": 60,
+                    "time": {
+                      "type": "NODE",
+                      "ID": "TX-T1_COG",
+                      "array": [
+                        "(0, time)"
+                      ]
+                    },
+                    "sampled_array": {
+                      "type": "NODE",
+                      "ID": "TX-T1_COG",
+                      "array": [
+                        "(0, x_acceleration)"
+                      ]
+                    }
+                  }
+                }
+              },
+              "time_": {
+                "type": "NODE",
+                "ID": "TX-T1_COG",
+                "array": [
+                  "(0, time)"
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "head_x_acceleration",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "HE-Head-CoG-Accelerometer-Global",
+          "array": [
+            "(0, x_acceleration)"
+          ]
+        }
+      },
+      {
+        "name": "T1_x_acceleration",
+        "part_of": "NECK",
+        "x": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, time)"
+          ]
+        },
+        "y": {
+          "type": "NODE",
+          "ID": "TX-T1_COG",
+          "array": [
+            "(0, x_acceleration)"
+          ]
+        }
+      }
+    ]
+  }
+]
